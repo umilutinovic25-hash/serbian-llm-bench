@@ -1,0 +1,889 @@
+{
+  "model": "ollama:llama3.2:latest",
+  "total_tasks": 95,
+  "overall": 54.6,
+  "categories": {
+    "gramatika": {
+      "score": 55.0,
+      "tasks": 20
+    },
+    "ner": {
+      "score": 77.3,
+      "tasks": 15
+    },
+    "padezi": {
+      "score": 25.0,
+      "tasks": 20
+    },
+    "pravopis": {
+      "score": 53.3,
+      "tasks": 15
+    },
+    "prevod": {
+      "score": 82.5,
+      "tasks": 10
+    },
+    "razumevanje": {
+      "score": 53.3,
+      "tasks": 15
+    }
+  },
+  "total_seconds": 36.7,
+  "records": [
+    {
+      "id": "gram-001",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 1.88,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-002",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.38,
+      "response": "Dobro, odgovor je A.",
+      "error": null
+    },
+    {
+      "id": "gram-003",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.25,
+      "response": "B) su",
+      "error": null
+    },
+    {
+      "id": "gram-004",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.26,
+      "response": "B) su.",
+      "error": null
+    },
+    {
+      "id": "gram-005",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačan tekst odgovora (bez slova)",
+      "seconds": 0.53,
+      "response": "Ispravan komparativ u ovom slučaju je \"viši\".",
+      "error": null
+    },
+    {
+      "id": "gram-006",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.27,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-007",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.23,
+      "response": "C)",
+      "error": null
+    },
+    {
+      "id": "gram-008",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.29,
+      "response": "B) kasniš",
+      "error": null
+    },
+    {
+      "id": "gram-009",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.24,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-010",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.26,
+      "response": "C) bih",
+      "error": null
+    },
+    {
+      "id": "gram-011",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.24,
+      "response": "B) si",
+      "error": null
+    },
+    {
+      "id": "gram-012",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.32,
+      "response": "A) ću imati",
+      "error": null
+    },
+    {
+      "id": "gram-013",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-014",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.49,
+      "response": "Dobro, odlučujem da odgovor je A.",
+      "error": null
+    },
+    {
+      "id": "gram-015",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.47,
+      "response": "Dobro, odlučite da je odgovor A.",
+      "error": null
+    },
+    {
+      "id": "gram-016",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.25,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-017",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.24,
+      "response": "A) smo",
+      "error": null
+    },
+    {
+      "id": "gram-018",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.25,
+      "response": "B) je",
+      "error": null
+    },
+    {
+      "id": "gram-019",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.24,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "gram-020",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.22,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-001",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.31,
+      "response": "B) kuća.",
+      "error": null
+    },
+    {
+      "id": "pad-002",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.22,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-003",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.3,
+      "response": "B) hleba.",
+      "error": null
+    },
+    {
+      "id": "pad-004",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.36,
+      "response": "Izaberite odgovor A.",
+      "error": null
+    },
+    {
+      "id": "pad-005",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "pad-006",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.28,
+      "response": "C) psa.",
+      "error": null
+    },
+    {
+      "id": "pad-007",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.28,
+      "response": "A) kiše.",
+      "error": null
+    },
+    {
+      "id": "pad-008",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.27,
+      "response": "B) tebe",
+      "error": null
+    },
+    {
+      "id": "pad-009",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.3,
+      "response": "B) prozora.",
+      "error": null
+    },
+    {
+      "id": "pad-010",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 1.23,
+      "response": "Izaberi oblik koji ispravno popunjava rečenicu: \"Ponosim se ___.\"\n\nIspod su odgovori:\n\nA) svog sina\nB) svome sinu\nC) svojim sinom",
+      "error": null
+    },
+    {
+      "id": "pad-011",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.25,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "pad-012",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "pad-013",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "pad-014",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "pad-015",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.26,
+      "response": "A) Beograd",
+      "error": null
+    },
+    {
+      "id": "pad-016",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.26,
+      "response": "B) Marku",
+      "error": null
+    },
+    {
+      "id": "pad-017",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.23,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-018",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.29,
+      "response": "B) gradom.",
+      "error": null
+    },
+    {
+      "id": "pad-019",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.87,
+      "response": "Izaberi oblik koji ispravno popunjava rečenicu: \"Rado se sećam svog ___.\"\n\nA) detinjstvo",
+      "error": null
+    },
+    {
+      "id": "pad-020",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.31,
+      "response": "B) tebe.",
+      "error": null
+    },
+    {
+      "id": "prav-001",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.38,
+      "response": "B) ćevapčići.",
+      "error": null
+    },
+    {
+      "id": "prav-002",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.35,
+      "response": "C) đevojčica.",
+      "error": null
+    },
+    {
+      "id": "prav-003",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.29,
+      "response": "B) ne znam.",
+      "error": null
+    },
+    {
+      "id": "prav-004",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.31,
+      "response": "C) neću.",
+      "error": null
+    },
+    {
+      "id": "prav-005",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.24,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "prav-006",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.3,
+      "response": "C) predsjednik",
+      "error": null
+    },
+    {
+      "id": "prav-007",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.28,
+      "response": "A) otca.",
+      "error": null
+    },
+    {
+      "id": "prav-008",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.29,
+      "response": "A) zadaci.",
+      "error": null
+    },
+    {
+      "id": "prav-009",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.24,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "prav-010",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.35,
+      "response": "C) u vezi s tim.",
+      "error": null
+    },
+    {
+      "id": "prav-011",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "prav-012",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.23,
+      "response": "B)",
+      "error": null
+    },
+    {
+      "id": "prav-013",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.31,
+      "response": "C) čokolada.",
+      "error": null
+    },
+    {
+      "id": "prav-014",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.28,
+      "response": "C) takodje",
+      "error": null
+    },
+    {
+      "id": "prav-015",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.23,
+      "response": "C.",
+      "error": null
+    },
+    {
+      "id": "raz-001",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.24,
+      "response": "B.",
+      "error": null
+    },
+    {
+      "id": "raz-002",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.3,
+      "response": "A) Klavir",
+      "error": null
+    },
+    {
+      "id": "raz-003",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.34,
+      "response": "A) U 20 časova.",
+      "error": null
+    },
+    {
+      "id": "raz-004",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.27,
+      "response": "C) Sofija",
+      "error": null
+    },
+    {
+      "id": "raz-005",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.26,
+      "response": "A) Da",
+      "error": null
+    },
+    {
+      "id": "raz-006",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.27,
+      "response": "A) Jedna",
+      "error": null
+    },
+    {
+      "id": "raz-007",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.22,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-008",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.22,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-009",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.48,
+      "response": "B) Obećavati mnogo, često nerealno",
+      "error": null
+    },
+    {
+      "id": "raz-010",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.26,
+      "response": "C)",
+      "error": null
+    },
+    {
+      "id": "raz-011",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.24,
+      "response": "C)",
+      "error": null
+    },
+    {
+      "id": "raz-012",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.22,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-013",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.31,
+      "response": "C) Samo Vesna",
+      "error": null
+    },
+    {
+      "id": "raz-014",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.23,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-015",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.23,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "ner-001",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.44,
+      "response": "Niš, Subotica, Beograd, Novi Sad",
+      "error": null
+    },
+    {
+      "id": "ner-002",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.41,
+      "response": "Milan Petrović, Ana Jovanović",
+      "error": null
+    },
+    {
+      "id": "ner-003",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.36,
+      "response": "Telekom Srbija\nNIS",
+      "error": null
+    },
+    {
+      "id": "ner-004",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.59,
+      "response": "Rok za prijavu - 15. mart\nRezultati - 1. april",
+      "error": null
+    },
+    {
+      "id": "ner-005",
+      "category": "ner",
+      "score": 0.8,
+      "note": "P 0.67 R 1.00 F1 0.80",
+      "seconds": 0.61,
+      "response": "Novčane iznose: \n- 120.000 dinara\n- 500 evra",
+      "error": null
+    },
+    {
+      "id": "ner-006",
+      "category": "ner",
+      "score": 0.8,
+      "note": "P 0.67 R 1.00 F1 0.80",
+      "seconds": 0.77,
+      "response": "Roman - Ivo Andrić\nNagradu - Nobelova nagrada\nSavremenik - Meša Selimović",
+      "error": null
+    },
+    {
+      "id": "ner-007",
+      "category": "ner",
+      "score": 0.6666666666666666,
+      "note": "P 1.00 R 0.50 F1 0.67",
+      "seconds": 0.7,
+      "response": "Srbija se graniči sa Mađarskom, Rumunijom i Bugarskom.",
+      "error": null
+    },
+    {
+      "id": "ner-008",
+      "category": "ner",
+      "score": 0.8571428571428571,
+      "note": "P 0.75 R 1.00 F1 0.86",
+      "seconds": 0.72,
+      "response": "Sve nazive reka iz rečenice su:\n\n- Sava\n- Dunav\n- Morava",
+      "error": null
+    },
+    {
+      "id": "ner-009",
+      "category": "ner",
+      "score": 0.6666666666666666,
+      "note": "P 0.50 R 1.00 F1 0.67",
+      "seconds": 1.06,
+      "response": "Novak Đoković\nje osvojio turnir\ndok je Nikola Jokić\nproglašen za najkorisnijeg igrača sezone.",
+      "error": null
+    },
+    {
+      "id": "ner-010",
+      "category": "ner",
+      "score": 0.0,
+      "note": "P 0.00 R 0.00 F1 0.00",
+      "seconds": 0.88,
+      "response": "Kancelarija, se, preselila, iz, Knez, Mihailove, u, Bulevar, kralja, Aleksandra.",
+      "error": null
+    },
+    {
+      "id": "ner-011",
+      "category": "ner",
+      "score": 0.0,
+      "note": "P 0.00 R 0.00 F1 0.00",
+      "seconds": 0.45,
+      "response": "011\n123-4567\n064\n555-1234",
+      "error": null
+    },
+    {
+      "id": "ner-012",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.45,
+      "response": "posao@firma.rs\ninfo@firma.rs",
+      "error": null
+    },
+    {
+      "id": "ner-013",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.53,
+      "response": "Elektrotehnički fakultet, Narodna banka Srbije",
+      "error": null
+    },
+    {
+      "id": "ner-014",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.46,
+      "response": "Kopaonik, Zlatibor, Tari",
+      "error": null
+    },
+    {
+      "id": "ner-015",
+      "category": "ner",
+      "score": 0.8,
+      "note": "P 1.00 R 0.67 F1 0.80",
+      "seconds": 0.51,
+      "response": "Kragujevac - Stefan \nČačak -",
+      "error": null
+    },
+    {
+      "id": "prev-001",
+      "category": "prevod",
+      "score": 0.3333333333333333,
+      "note": "pogođeno 1/3 ključnih pojmova",
+      "seconds": 0.58,
+      "response": "\"Predstava je odgođena do sledećeg tjedna.\"",
+      "error": null
+    },
+    {
+      "id": "prev-002",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 3/3 ključnih pojmova",
+      "seconds": 0.48,
+      "response": "Ona radi kao softver inženjer za tri godine.",
+      "error": null
+    },
+    {
+      "id": "prev-003",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 3/3 ključnih pojmova",
+      "seconds": 0.61,
+      "response": "\"Molimo vas da zatvorate prozor, ovo je hladno u ovom sobi.\"",
+      "error": null
+    },
+    {
+      "id": "prev-004",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.39,
+      "response": "I have a meeting with the client tomorrow morning.",
+      "error": null
+    },
+    {
+      "id": "prev-005",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.36,
+      "response": "\"This app does not work on older phones.\"",
+      "error": null
+    },
+    {
+      "id": "prev-006",
+      "category": "prevod",
+      "score": 0.75,
+      "note": "pogođeno 3/4 ključnih pojmova",
+      "seconds": 0.6,
+      "response": "\"Konfiguracija baze podataka nije uspela posle ponovnog starta servera.\"",
+      "error": null
+    },
+    {
+      "id": "prev-007",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.32,
+      "response": "\"Price includes delivery and assembly.\"",
+      "error": null
+    },
+    {
+      "id": "prev-008",
+      "category": "prevod",
+      "score": 0.5,
+      "note": "pogođeno 2/4 ključnih pojmova",
+      "seconds": 0.58,
+      "response": "Želim da se zaposobim stolom za dvije osobe u 8 sati.",
+      "error": null
+    },
+    {
+      "id": "prev-009",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.42,
+      "response": "Unfortunately, we have to cancel the trip due to illness.",
+      "error": null
+    },
+    {
+      "id": "prev-010",
+      "category": "prevod",
+      "score": 0.6666666666666666,
+      "note": "pogođeno 2/3 ključnih pojmova",
+      "seconds": 0.53,
+      "response": "\"Dečaci do šeste godine uđu bez plaćanja.\"",
+      "error": null
+    }
+  ]
+}

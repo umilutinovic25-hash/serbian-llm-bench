@@ -1,0 +1,20 @@
+{"id": "pad-001", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Idem ___ posle posla.\"", "choices": ["kuću", "kuća", "kući"], "answer": "C"}
+{"id": "pad-002", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Razgovaram sa ___ o putovanju.\"", "choices": ["prijateljem", "prijatelja", "prijatelju"], "answer": "A"}
+{"id": "pad-003", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"U prodavnici nema ___.\"", "choices": ["hleb", "hleba", "hlebu"], "answer": "B"}
+{"id": "pad-004", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Divim se ___.\"", "choices": ["njenu hrabrost", "njene hrabrosti", "njenoj hrabrosti"], "answer": "C"}
+{"id": "pad-005", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Pišem ___ pismo iz Pariza.\"", "choices": ["majci", "majku", "majkom"], "answer": "A"}
+{"id": "pad-006", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Vidim ___ u dvorištu.\"", "choices": ["pas", "psu", "psa"], "answer": "C"}
+{"id": "pad-007", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Uprkos ___, izašli smo u šetnju.\"", "choices": ["kiše", "kiši", "kišom"], "answer": "B"}
+{"id": "pad-008", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Zahvaljujući ___, položio sam ispit.\"", "choices": ["tebi", "tebe", "tobom"], "answer": "A"}
+{"id": "pad-009", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Sedim pored ___ i gledam napolje.\"", "choices": ["prozor", "prozora", "prozoru"], "answer": "B"}
+{"id": "pad-010", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Ponosim se ___.\"", "choices": ["svog sina", "svome sinu", "svojim sinom"], "answer": "C"}
+{"id": "pad-011", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Vozimo se prema ___.\"", "choices": ["gradu", "grada", "gradom"], "answer": "A"}
+{"id": "pad-012", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Moj brat se bavi ___.\"", "choices": ["sporta", "sportom", "sportu"], "answer": "B"}
+{"id": "pad-013", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Oduvek se plašim ___.\"", "choices": ["visinu", "visini", "visine"], "answer": "C"}
+{"id": "pad-014", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Kupio sam poklon ___ za rođendan.\"", "choices": ["sestri", "sestru", "sestrom"], "answer": "A"}
+{"id": "pad-015", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"U ___ ima mnogo muzeja i galerija.\"", "choices": ["Beograd", "Beogradu", "Beograda"], "answer": "B"}
+{"id": "pad-016", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"___, dođi ovamo odmah!\"", "choices": ["Marka", "Marku", "Marko"], "answer": "C"}
+{"id": "pad-017", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Zdravo, ___! Kako si?\"", "choices": ["Ivane", "Ivan", "Ivanu"], "answer": "A"}
+{"id": "pad-018", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Nedeljom ujutru šetamo ___.\"", "choices": ["grada", "gradom", "gradu"], "answer": "B"}
+{"id": "pad-019", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Rado se sećam svog ___.\"", "choices": ["detinjstvo", "detinjstvu", "detinjstva"], "answer": "C"}
+{"id": "pad-020", "category": "padezi", "type": "mc", "prompt": "Izaberi oblik koji ispravno popunjava rečenicu: \"Verujem ___ više nego bilo kome drugom.\"", "choices": ["tebi", "tebe", "tobom"], "answer": "A"}

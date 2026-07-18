@@ -1,0 +1,15 @@
+{"id": "prav-001", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["čevapćići", "ćevapčići", "ćevapćići"], "answer": "B"}
+{"id": "prav-002", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["devojčica", "devojćica", "đevojčica"], "answer": "A"}
+{"id": "prav-003", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisan izraz:", "choices": ["neznam", "ne znam", "ne-znam"], "answer": "B"}
+{"id": "prav-004", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisan oblik (srpski standard):", "choices": ["ne ću", "ne-ću", "neću"], "answer": "C"}
+{"id": "prav-005", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisan superlativ prideva \"jak\":", "choices": ["najjači", "najači", "naj jači"], "answer": "A"}
+{"id": "prav-006", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["pretsednik", "predsednik", "predsjednik (srpski ekavski standard)"], "answer": "B"}
+{"id": "prav-007", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravan genitiv jednine imenice \"otac\":", "choices": ["otca", "oteca", "oca"], "answer": "C"}
+{"id": "prav-008", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravan nominativ množine imenice \"zadatak\" (srpski standard):", "choices": ["zadaci", "zadatci", "zadatki"], "answer": "A"}
+{"id": "prav-009", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisan izraz:", "choices": ["sobzirom na to", "s obzirom na to", "sa obzirom na to"], "answer": "B"}
+{"id": "prav-010", "category": "pravopis", "type": "mc", "prompt": "Izaberi normativno ispravan izraz:", "choices": ["u vezi toga", "u vezi sa time", "u vezi s tim"], "answer": "C"}
+{"id": "prav-011", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["ćerka", "čerka", "tjerka"], "answer": "A"}
+{"id": "prav-012", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["hočeš", "hoćeš", "hoces"], "answer": "B"}
+{"id": "prav-013", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["ćokolada", "čokolatda", "čokolada"], "answer": "C"}
+{"id": "prav-014", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisanu reč:", "choices": ["takođe", "tako đe", "takodje (jedini ispravan oblik)"], "answer": "A"}
+{"id": "prav-015", "category": "pravopis", "type": "mc", "prompt": "Izaberi ispravno napisan naziv stanovnika Beograda:", "choices": ["beograđanin", "Beograđanin", "Beogradjanin (jedini ispravan oblik)"], "answer": "B"}

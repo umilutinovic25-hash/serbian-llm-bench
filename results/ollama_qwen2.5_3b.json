@@ -1,0 +1,889 @@
+{
+  "model": "ollama:qwen2.5:3b",
+  "total_tasks": 95,
+  "overall": 56.6,
+  "categories": {
+    "gramatika": {
+      "score": 65.0,
+      "tasks": 20
+    },
+    "ner": {
+      "score": 96.4,
+      "tasks": 15
+    },
+    "padezi": {
+      "score": 30.0,
+      "tasks": 20
+    },
+    "pravopis": {
+      "score": 53.3,
+      "tasks": 15
+    },
+    "prevod": {
+      "score": 53.3,
+      "tasks": 10
+    },
+    "razumevanje": {
+      "score": 46.7,
+      "tasks": 15
+    }
+  },
+  "total_seconds": 23.0,
+  "records": [
+    {
+      "id": "gram-001",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.21,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-002",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-003",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-004",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.18,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "gram-005",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-006",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-007",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "gram-008",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-009",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-010",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "gram-011",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.18,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-012",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.19,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "gram-013",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-014",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-015",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-016",
+      "category": "gramatika",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.12,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-017",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "gram-018",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-019",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.12,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "gram-020",
+      "category": "gramatika",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-001",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-002",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-003",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.19,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "pad-004",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-005",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.16,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-006",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.2,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-007",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.21,
+      "response": "C)",
+      "error": null
+    },
+    {
+      "id": "pad-008",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-009",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno B",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "pad-010",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-011",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.19,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-012",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-013",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.23,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-014",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-015",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-016",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "pad-017",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-018",
+      "category": "padezi",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "pad-019",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.14,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "pad-020",
+      "category": "padezi",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.17,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-001",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.2,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-002",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.19,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "prav-003",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-004",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "prav-005",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "prav-006",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-007",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "prav-008",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "prav-009",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.19,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-010",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-011",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.18,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-012",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.18,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "prav-013",
+      "category": "pravopis",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.18,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "prav-014",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "prav-015",
+      "category": "pravopis",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-001",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-002",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "raz-003",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-004",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.13,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "raz-005",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao B, tačno A",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-006",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno B",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-007",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-008",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-009",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-010",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao C, tačno A",
+      "seconds": 0.13,
+      "response": "C",
+      "error": null
+    },
+    {
+      "id": "raz-011",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-012",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.16,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "raz-013",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao B, tačno C",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-014",
+      "category": "razumevanje",
+      "score": 1.0,
+      "note": "tačno",
+      "seconds": 0.13,
+      "response": "B",
+      "error": null
+    },
+    {
+      "id": "raz-015",
+      "category": "razumevanje",
+      "score": 0.0,
+      "note": "dao A, tačno C",
+      "seconds": 0.14,
+      "response": "A",
+      "error": null
+    },
+    {
+      "id": "ner-001",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.46,
+      "response": "Niša, Suboticu, Beogradu, Novom Sadu",
+      "error": null
+    },
+    {
+      "id": "ner-002",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.37,
+      "response": "Milan Petrović, Ana Jovanović",
+      "error": null
+    },
+    {
+      "id": "ner-003",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.29,
+      "response": "Telekom Srbija,NIS",
+      "error": null
+    },
+    {
+      "id": "ner-004",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.28,
+      "response": "15. mart, 1. aprila",
+      "error": null
+    },
+    {
+      "id": "ner-005",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.4,
+      "response": "120.000 dinara, 500 evra",
+      "error": null
+    },
+    {
+      "id": "ner-006",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.41,
+      "response": "Ivo Andrić, Meša Selimović",
+      "error": null
+    },
+    {
+      "id": "ner-007",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.45,
+      "response": "Srbija,Srbija,Mađarska,Rumunija,Bugarska",
+      "error": null
+    },
+    {
+      "id": "ner-008",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.33,
+      "response": "Sava,Dunav,Morava",
+      "error": null
+    },
+    {
+      "id": "ner-009",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.39,
+      "response": "Novak Đoković,Nikola Jokić",
+      "error": null
+    },
+    {
+      "id": "ner-010",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.42,
+      "response": "Knez Mihailove,Bulevar kralja Aleksandra",
+      "error": null
+    },
+    {
+      "id": "ner-011",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.57,
+      "response": "011/123-4567, 064-555-1234",
+      "error": null
+    },
+    {
+      "id": "ner-012",
+      "category": "ner",
+      "score": 0.6666666666666666,
+      "note": "P 1.00 R 0.50 F1 0.67",
+      "seconds": 0.32,
+      "response": "posao@firma.rs/info@firma.rs",
+      "error": null
+    },
+    {
+      "id": "ner-013",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.46,
+      "response": "Elektrotehnički fakultet,Narodna banka Srbija",
+      "error": null
+    },
+    {
+      "id": "ner-014",
+      "category": "ner",
+      "score": 1.0,
+      "note": "P 1.00 R 1.00 F1 1.00",
+      "seconds": 0.35,
+      "response": "Kopaoniku,Zlatiboru,Tari",
+      "error": null
+    },
+    {
+      "id": "ner-015",
+      "category": "ner",
+      "score": 0.8,
+      "note": "P 1.00 R 0.67 F1 0.80",
+      "seconds": 0.28,
+      "response": "Kragujevac,Čačak",
+      "error": null
+    },
+    {
+      "id": "prev-001",
+      "category": "prevod",
+      "score": 0.0,
+      "note": "pogođeno 0/3 ključnih pojmova",
+      "seconds": 0.56,
+      "response": "Srečan radovanje je održano do sljedećeg tijela.",
+      "error": null
+    },
+    {
+      "id": "prev-002",
+      "category": "prevod",
+      "score": 0.3333333333333333,
+      "note": "pogođeno 1/3 ključnih pojmova",
+      "seconds": 0.5,
+      "response": "\"Ona treće godine radila je kao softverni inženir.\"",
+      "error": null
+    },
+    {
+      "id": "prev-003",
+      "category": "prevod",
+      "score": 0.6666666666666666,
+      "note": "pogođeno 2/3 ključnih pojmova",
+      "seconds": 2.1,
+      "response": "\"Molim vas zatvorite prozor, ovdje je ovde冷。\" \n\nVažno je napomenuti da tekutni jezik (ili npr. engleski) ne može biti prevozen bez objašnjenja jer to bi prekid bio za razumijevanje. Ovaj deo sadrži samo tekst koji nije prevodljiv bez dodavanja interpretacije ili konteksta.",
+      "error": null
+    },
+    {
+      "id": "prev-004",
+      "category": "prevod",
+      "score": 0.25,
+      "note": "pogođeno 1/4 ključnih pojmova",
+      "seconds": 0.35,
+      "response": "\"Sutra youtrude Imam meet client.\"",
+      "error": null
+    },
+    {
+      "id": "prev-005",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.33,
+      "response": "\"This application does not work on older phones.\"",
+      "error": null
+    },
+    {
+      "id": "prev-006",
+      "category": "prevod",
+      "score": 0.5,
+      "note": "pogođeno 2/4 ključnih pojmova",
+      "seconds": 0.68,
+      "response": "\"Povezivanje sa bazo podataka nije uspelo nakon ponavljanja poslužiteljstva.\"",
+      "error": null
+    },
+    {
+      "id": "prev-007",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.31,
+      "response": "\"Price includes delivery and installation.\"",
+      "error": null
+    },
+    {
+      "id": "prev-008",
+      "category": "prevod",
+      "score": 0.25,
+      "note": "pogođeno 1/4 ključnih pojmova",
+      "seconds": 0.58,
+      "response": "Želim da naručim mjesto za dva ljudma u 21:00.",
+      "error": null
+    },
+    {
+      "id": "prev-009",
+      "category": "prevod",
+      "score": 1.0,
+      "note": "pogođeno 4/4 ključnih pojmova",
+      "seconds": 0.42,
+      "response": "\"Unfortunately, we have to cancel the trip due to illness.\"",
+      "error": null
+    },
+    {
+      "id": "prev-010",
+      "category": "prevod",
+      "score": 0.3333333333333333,
+      "note": "pogođeno 1/3 ključnih pojmova",
+      "seconds": 0.6,
+      "response": "Djece unazad šezdeset godina puno neću unapređene.",
+      "error": null
+    }
+  ]
+}
