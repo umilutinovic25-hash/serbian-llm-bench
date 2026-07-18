@@ -79,10 +79,12 @@ FINDINGS = """
 
 - **Padeži su najteži.** Nijedan testirani model ne prelazi 50%, a neki padaju
   ispod nasumičnog pogađanja — bolje bi prošli da su odgovarali nasumično.
-- **NER je najlakši.** Izdvajanje imena i mesta ide preko 95% jer je uglavnom
-  prepisivanje iz teksta, bez morfologije.
-- **Veličina nije sve.** Mistral 7B vodi, ali gemma2 sa 2B parametara tuče
-  qwen2.5 sa 3B — podaci za treniranje znače više od broja parametara.
+- **NER je najlakši.** Izdvajanje imena i mesta ide preko 95% kod najboljih jer je
+  uglavnom prepisivanje iz teksta, bez morfologije.
+- **Veličina nije sve.** Mistral 7B vodi, ali gemma2 sa 2B parametara tuče i
+  qwen2.5:3b i phi3:mini — podaci za treniranje znače više od broja parametara.
+- **Ispod ~2B se gubi zadatak.** llama3.2:1b na razumevanju ima 20%, jer često ne
+  odgovori slovom nego napiše nepovezan tekst.
 """
 
 METHODOLOGY = """
@@ -101,8 +103,13 @@ METHODOLOGY = """
 
 **Zaštita od varanja u ocenjivanju.** NER se ocenjuje F1 merom, ne samo odzivom:
 model koji prepiše celu rečenicu dobija visok odziv, ali niska preciznost mu obara
-rezultat na ~0.6 umesto 1.0. Poređenje teksta zanemaruje dijakritike, pa
-„Niš" i „Nis" prolaze isto — meri se znanje, ne raspored tastature.
+rezultat na ~0.6 umesto 1.0. Poređenje zanemaruje dijakritike i transliterira
+ćirilicu, pa „Niš", „Nis" i „Ниш" prolaze isto — srpski je dvoazbučan, meri se
+znanje jezika a ne pismo.
+
+Ocenjivanje pokriva skup testova (`bench/test_scoring.py`), napisan nakon što su
+dva buga obarala rezultate: hvatanje slova „a" unutar reči „Dva" kao odgovora A, i
+normalizacija koja je brisala ćirilicu u prazan string.
 
 **Pokretanje lokalno**
 

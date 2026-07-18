@@ -27,27 +27,35 @@ predloga „uprkos".
 
 | # | Model | Ukupno | Gramatika | Padeži | Pravopis | Razumevanje | NER | Prevod |
 |---|---|---|---|---|---|---|---|---|
-| 1 | mistral:latest (7B) | **71.5** | 65.0 | 50.0 | 66.7 | 73.3 | 95.3 | 96.7 |
+| 1 | mistral (7B) | **71.5** | 65.0 | 50.0 | 66.7 | 73.3 | 95.3 | 96.7 |
 | 2 | gemma2:2b | 60.9 | 50.0 | 45.0 | 53.3 | 60.0 | 96.7 | 73.3 |
 | 3 | qwen2.5:3b | 56.6 | 65.0 | 30.0 | 53.3 | 46.7 | 96.4 | 53.3 |
 | 4 | llama3.2 (3B) | 54.6 | 55.0 | 25.0 | 53.3 | 53.3 | 77.3 | 82.5 |
 | 5 | qwen2.5:1.5b | 47.9 | 50.0 | 40.0 | 26.7 | 40.0 | 76.9 | 60.0 |
+| 6 | phi3:mini (3.8B) | 45.9 | 35.0 | 40.0 | 46.7 | 53.3 | 61.5 | 44.2 |
+| 7 | llama3.2:1b | 38.3 | 35.0 | 30.0 | 33.3 | 20.0 | 78.4 | 35.8 |
 
 Nasumično pogađanje daje **33.3%** na pitanjima sa tri ponuđena odgovora.
 
 ## Nalazi
 
-**Padeži su zid.** Prosek svih modela je 38%, nijedan ne prelazi 50%, a `llama3.2`
+**Padeži su zid.** Prosek svih modela je 37%, nijedan ne prelazi 50%, a `llama3.2`
 sa 25% i `qwen2.5:3b` sa 30% su **ispod nasumičnog pogađanja** — bolje bi prošli
 da su bacali novčić. Sedmopadežni sistem sa rekcijom predloga je ono što ovi modeli
 nisu naučili.
 
-**NER je najlakši (88.5% prosek).** Izdvajanje imena, gradova i iznosa je uglavnom
+**NER je najlakši (83.2% prosek).** Izdvajanje imena, gradova i iznosa je uglavnom
 prepisivanje iz teksta — morfologija se ne dira, pa i najslabiji modeli prolaze.
 
-**Broj parametara ne odlučuje.** `gemma2:2b` tuče `qwen2.5:3b` uprkos manjem
-modelu, a razlika je najveća baš na padežima (45% naspram 30%). Zastupljenost
-srpskog u podacima za treniranje znači više od veličine.
+**Broj parametara ne odlučuje.** `gemma2:2b` tuče `qwen2.5:3b` i `phi3:mini`,
+oba veća od njega, a razlika je najveća baš na padežima. Zastupljenost srpskog u
+podacima za treniranje znači više od veličine.
+
+**Ispod ~2B model prestaje da prati zadatak.** `llama3.2:1b` na razumevanju ima
+20% — daleko ispod nasumičnog pogađanja, jer često uopšte ne odgovori slovom nego
+napiše nepovezan tekst („Napomena: Ova pitanja nema odgovora"). `phi3:mini` sklizne
+u ćirilicu i piše rečenice koje nisu srpski („Визимото је пропуштано"), pa mu prevod
+pada na 44% uprkos 3.8B parametara.
 
 **Gramatika i pravopis stoje na pola.** Modeli znaju uobičajene oblike, ali padaju
 na tačkama gde i izvorni govornici greše: „trebam" umesto „treba", komparativ
@@ -73,11 +81,18 @@ na tačkama gde i izvorni govornici greše: „trebam" umesto „treba", kompara
   ali ga preciznost obara na ~0.6 umesto 1.0. Bez ovoga se benchmark trivijalno vara.
 - **Prevod** — pokrivenost ključnih pojmova, sa prihvaćenim sinonimima
   (`odložen` / `pomeren` / `odgođen` prolaze isto).
-- Poređenje zanemaruje dijakritike i interpunkciju: „Niš" i „Nis" su isto. Meri se
-  znanje jezika, ne raspored tastature.
+- Poređenje zanemaruje dijakritike i **transliterira ćirilicu**: „Niš", „Nis" i
+  „Ниш" su isto. Srpski je dvoazbučan, pa bi kažnjavanje ćiriličnog odgovora merilo
+  pismo umesto znanja jezika.
 
 Svi modeli rade na `temperature=0`, sa identičnim promptovima. Za modele koji
 generišu razmišljanje, `<think>` blok se odbacuje pre ocenjivanja.
+
+Ocenjivanje pokriva `bench/test_scoring.py` (`python bench/test_scoring.py`).
+Testovi postoje jer su dva buga u ocenjivanju već obarala rezultate: izvlačenje
+slova je bez razlikovanja velikih i malih slova hvatalo „a" unutar reči „Dva" i
+čitalo ga kao odgovor A, a normalizacija je brisala ćirilicu u prazan string, pa
+bi ispravan ćirilični odgovor dobio nulu.
 
 ## Pokretanje
 

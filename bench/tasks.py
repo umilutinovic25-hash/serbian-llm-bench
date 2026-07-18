@@ -52,10 +52,27 @@ def load_tasks(categories: list[str] | None = None) -> list[Task]:
     return tasks
 
 
+# Serbian is digraphic: an answer in correct Cyrillic must score the same as the
+# identical answer in Latin, so everything is transliterated before comparison.
+_CYRILLIC_TO_LATIN = {
+    "а": "a", "б": "b", "в": "v", "г": "g", "д": "d", "ђ": "dj", "е": "e",
+    "ж": "z", "з": "z", "и": "i", "ј": "j", "к": "k", "л": "l", "љ": "lj",
+    "м": "m", "н": "n", "њ": "nj", "о": "o", "п": "p", "р": "r", "с": "s",
+    "т": "t", "ћ": "c", "у": "u", "ф": "f", "х": "h", "ц": "c", "ч": "c",
+    "џ": "dz", "ш": "s",
+}
+
+
 def _fold(text: str) -> str:
-    """Lowercase, strip diacritics and punctuation so č/c and š/s compare equal."""
+    """Normalize for comparison: lowercase, Cyrillic to Latin, drop diacritics.
+
+    Makes "Niš", "Nis" and "Ниш" compare equal — the benchmark measures knowledge
+    of the language, not the writing system or keyboard layout.
+    """
     text = text.lower()
-    text = text.replace("đ", "dj").replace("ђ", "dj")
+    text = "".join(_CYRILLIC_TO_LATIN.get(ch, ch) for ch in text)
+    text = text.replace("đ", "dj").replace("ž", "z").replace("š", "s")
+    text = text.replace("ć", "c").replace("č", "c")
     decomposed = unicodedata.normalize("NFD", text)
     stripped = "".join(ch for ch in decomposed if not unicodedata.combining(ch))
     return re.sub(r"[^a-z0-9@./\s-]", " ", stripped)
@@ -64,16 +81,17 @@ def _fold(text: str) -> str:
 def _extract_letter(response: str, n_choices: int) -> str | None:
     valid = LETTERS[:n_choices]
     head = response.strip()[:400]
+    # Case-sensitive on purpose: with IGNORECASE, [A-E] matches lowercase letters
+    # inside ordinary words ("Dva" would yield "A").
     patterns = [
-        r"^\s*\(?([A-E])\)?\s*[).:,-]",   # "B)" / "B." / "(B)"
-        r"^\s*([A-E])\s*$",                 # bare letter
-        r"odgovor\D{0,15}([A-E])\b",       # "odgovor je B"
-        r"\b([A-E])\)",                     # first "B)" anywhere
+        r"^\s*\(?([A-E])\)?\s*(?:[).:,-]|$)",   # "B)" / "B." / "(B)" / bare "B"
+        r"[Oo]dgovor\b[^A-E\n]{0,15}?([A-E])\b",  # "odgovor je B" / "odgovor: B"
+        r"\b([A-E])\)",                           # first "B)" anywhere
     ]
     for pattern in patterns:
-        match = re.search(pattern, head, re.IGNORECASE | re.MULTILINE)
-        if match and match.group(1).upper() in valid:
-            return match.group(1).upper()
+        match = re.search(pattern, head, re.MULTILINE)
+        if match and match.group(1) in valid:
+            return match.group(1)
     return None
 
 
