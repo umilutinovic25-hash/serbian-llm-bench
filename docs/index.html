@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Benchmark koji meri koliko mali open-source modeli znaju srpski: 95 zadataka, 7 modela, 6 kategorija.">
 <title>Srpski LLM Benchmark — koliko mali modeli znaju srpski</title>
 
 <style>
@@ -429,6 +435,9 @@
   }
 
   footer .status { color: var(--ink-soft); }
+  footer a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 2px; }
+  footer a:hover, footer a:focus-visible { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
   @media (max-width: 34rem) {
     .board-row {
@@ -440,6 +449,8 @@
   }
 </style>
 
+</head>
+<body>
 <div class="wrap">
 
   <header class="masthead">
@@ -744,10 +755,13 @@ python bench/test_scoring.py</code></pre>
 
   <footer>
     <span class="status">
-      Statična verzija rezultata. Interaktivni leaderboard i skup zadataka idu na
-      Hugging Face kao Space.
+      Objavljeno i na <a href="https://huggingface.co/spaces/uros69/serbian-llm-bench">Hugging Face</a>.
+      Kod, zadaci i harness: <a href="https://github.com/umilutinovic25-hash/serbian-llm-bench">GitHub</a>.
     </span>
     <span>Kod i podaci: Apache 2.0 · Uroš Milutinović</span>
   </footer>
 
 </div>
+
+</body>
+</html>
