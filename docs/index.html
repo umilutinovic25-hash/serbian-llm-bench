@@ -1,0 +1,753 @@
+<title>Srpski LLM Benchmark — koliko mali modeli znaju srpski</title>
+
+<style>
+  :root {
+    --paper: #F4F5F7;
+    --surface: #FFFFFF;
+    --ink: #1A1D24;
+    --ink-soft: #5A6070;
+    --ink-faint: #8B92A3;
+    --rule: #D8DBE0;
+    --accent: #C42B1C;
+    --accent-soft: #F2D8D4;
+    --good: #2D6A4F;
+    --bar: #3A4152;
+    --bar-track: #E4E7EC;
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14161B;
+      --surface: #1C1F26;
+      --ink: #E8EAEE;
+      --ink-soft: #A5ACBB;
+      --ink-faint: #737B8C;
+      --rule: #2E323C;
+      --accent: #E8695A;
+      --accent-soft: #3A2320;
+      --good: #4FA97D;
+      --bar: #7E8798;
+      --bar-track: #262A33;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14161B;
+    --surface: #1C1F26;
+    --ink: #E8EAEE;
+    --ink-soft: #A5ACBB;
+    --ink-faint: #737B8C;
+    --rule: #2E323C;
+    --accent: #E8695A;
+    --accent-soft: #3A2320;
+    --good: #4FA97D;
+    --bar: #7E8798;
+    --bar-track: #262A33;
+  }
+
+  :root[data-theme="light"] {
+    --paper: #F4F5F7;
+    --surface: #FFFFFF;
+    --ink: #1A1D24;
+    --ink-soft: #5A6070;
+    --ink-faint: #8B92A3;
+    --rule: #D8DBE0;
+    --accent: #C42B1C;
+    --accent-soft: #F2D8D4;
+    --good: #2D6A4F;
+    --bar: #3A4152;
+    --bar-track: #E4E7EC;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 5rem) clamp(1.1rem, 4vw, 2.5rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  /* ---------- header ---------- */
+
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .masthead h1 .alt {
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  .standfirst {
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .facts b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+
+  section { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+
+  p { margin: 0; max-width: 64ch; text-wrap: pretty; }
+
+  /* ---------- leaderboard ---------- */
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+
+  .board-row {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(7rem, 1fr) minmax(8rem, 2.2fr) 3.6rem;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .board-row:last-child { border-bottom: 0; }
+
+  .board-head {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: 0.85rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .rank {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .model-name {
+    font-family: var(--mono);
+    font-size: 0.87rem;
+    font-weight: 500;
+  }
+  .model-size { color: var(--ink-faint); font-weight: 400; }
+
+  .track {
+    position: relative;
+    height: 1.35rem;
+    background: var(--bar-track);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .fill {
+    height: 100%;
+    background: var(--bar);
+    border-radius: 2px 0 0 2px;
+  }
+  .board-row:first-of-type .fill { background: var(--good); }
+
+  /* the thesis: chance level, marked across every bar */
+  .chance {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33.3%;
+    width: 0;
+    border-left: 2px dashed var(--accent);
+  }
+
+  .score {
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .board-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .legend-mark {
+    display: inline-block;
+    width: 1.6rem;
+    border-top: 2px dashed var(--accent);
+  }
+
+  /* ---------- category table ---------- */
+
+  .table-scroll { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  caption {
+    text-align: left;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    padding-bottom: 0.9rem;
+    max-width: 62ch;
+  }
+
+  th, td {
+    padding: 0.5rem 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom-color: var(--ink-faint);
+  }
+
+  th[scope="row"], thead th:first-child {
+    text-align: left;
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+  th[scope="row"] { font-size: 0.85rem; color: var(--ink); }
+
+  tbody td { font-family: var(--mono); color: var(--ink-soft); }
+  td.lead { color: var(--ink); font-weight: 600; }
+  td.below { color: var(--accent); }
+  td.strong { color: var(--good); }
+
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+
+  /* ---------- difficulty ---------- */
+
+  .difficulty { display: flex; flex-direction: column; gap: 0.55rem; }
+
+  .diff-row {
+    display: grid;
+    grid-template-columns: minmax(6rem, 8rem) 1fr 3rem;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .diff-label { font-size: 0.88rem; }
+
+  .diff-track {
+    position: relative;
+    height: 0.6rem;
+    background: var(--bar-track);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .diff-fill { height: 100%; background: var(--bar); border-radius: 999px; }
+  .diff-fill.hard { background: var(--accent); }
+
+  .diff-score {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- findings ---------- */
+
+  .findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.6rem 2.2rem;
+  }
+
+  .finding { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .finding h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.12rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .finding p { font-size: 0.93rem; color: var(--ink-soft); }
+
+  .finding .figure {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+
+  /* ---------- method ---------- */
+
+  .method {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1.5rem clamp(1.1rem, 3vw, 1.8rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .method h3 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .method p { font-size: 0.93rem; color: var(--ink-soft); }
+  .method strong { color: var(--ink); font-weight: 600; }
+
+  .bugs { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .bug {
+    display: flex;
+    gap: 0.9rem;
+    align-items: baseline;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .bug-tag {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.12rem 0.4rem;
+    border-radius: 2px;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.87em;
+    background: var(--bar-track);
+    padding: 0.08em 0.3em;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  pre {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    background: var(--bar-track);
+    color: var(--ink);
+    padding: 0.9rem 1.1rem;
+    border-radius: 3px;
+    overflow-x: auto;
+    line-height: 1.55;
+  }
+  pre code { background: none; padding: 0; font-size: 1em; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+    color: var(--ink-faint);
+  }
+
+  footer .status { color: var(--ink-soft); }
+
+  @media (max-width: 34rem) {
+    .board-row {
+      grid-template-columns: 1.4rem 1fr 3.2rem;
+      row-gap: 0.5rem;
+    }
+    .board-row .track { grid-column: 2 / -1; }
+    .board-head .track-head { display: none; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="eyebrow">Otvoreni benchmark · jul 2026</div>
+    <h1>Koliko mali modeli zaista znaju <span class="alt">српски</span>?</h1>
+    <p class="standfirst">
+      Engleski leaderboardi ne mere padeže. Model može biti odličan na MMLU i i dalje
+      ne znati u koji padež ide imenica posle predloga „uprkos".
+    </p>
+    <div class="facts">
+      <span><b>95</b> zadataka</span>
+      <span><b>7</b> modela</span>
+      <span><b>6</b> kategorija</span>
+      <span><b>temperature 0</b></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Rang lista</h2>
+    <p class="section-note">
+      Ukupan rezultat po modelu. Isprekidana linija je <b>33.3%</b> — koliko donosi
+      nasumično pogađanje na pitanjima sa tri ponuđena odgovora. Rezultat blizu nje
+      znači da model ne razume zadatak, a ne da je „malo slabiji".
+    </p>
+
+    <div class="board">
+      <div class="board-row board-head">
+        <span>#</span>
+        <span>Model</span>
+        <span class="track-head">Ukupno</span>
+        <span class="score">%</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">1</span>
+        <span class="model-name">mistral <span class="model-size">7B</span></span>
+        <div class="track"><div class="fill" style="width: 71.5%"></div><div class="chance"></div></div>
+        <span class="score">71.5</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">2</span>
+        <span class="model-name">gemma2 <span class="model-size">2B</span></span>
+        <div class="track"><div class="fill" style="width: 60.9%"></div><div class="chance"></div></div>
+        <span class="score">60.9</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">3</span>
+        <span class="model-name">qwen2.5 <span class="model-size">3B</span></span>
+        <div class="track"><div class="fill" style="width: 56.6%"></div><div class="chance"></div></div>
+        <span class="score">56.6</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">4</span>
+        <span class="model-name">llama3.2 <span class="model-size">3B</span></span>
+        <div class="track"><div class="fill" style="width: 54.6%"></div><div class="chance"></div></div>
+        <span class="score">54.6</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">5</span>
+        <span class="model-name">qwen2.5 <span class="model-size">1.5B</span></span>
+        <div class="track"><div class="fill" style="width: 47.9%"></div><div class="chance"></div></div>
+        <span class="score">47.9</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">6</span>
+        <span class="model-name">phi3 mini <span class="model-size">3.8B</span></span>
+        <div class="track"><div class="fill" style="width: 45.9%"></div><div class="chance"></div></div>
+        <span class="score">45.9</span>
+      </div>
+
+      <div class="board-row">
+        <span class="rank">7</span>
+        <span class="model-name">llama3.2 <span class="model-size">1B</span></span>
+        <div class="track"><div class="fill" style="width: 38.3%"></div><div class="chance"></div></div>
+        <span class="score">38.3</span>
+      </div>
+    </div>
+
+    <div class="board-legend">
+      <span class="legend-mark"></span>
+      <span>nasumično pogađanje · 33.3%</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Šta je teško, a šta lako</h2>
+    <div class="difficulty">
+      <div class="diff-row">
+        <span class="diff-label">Padeži</span>
+        <div class="diff-track"><div class="diff-fill hard" style="width: 37.1%"></div></div>
+        <span class="diff-score">37.1</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-label">Pravopis</span>
+        <div class="diff-track"><div class="diff-fill" style="width: 47.6%"></div></div>
+        <span class="diff-score">47.6</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-label">Razumevanje</span>
+        <div class="diff-track"><div class="diff-fill" style="width: 49.5%"></div></div>
+        <span class="diff-score">49.5</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-label">Gramatika</span>
+        <div class="diff-track"><div class="diff-fill" style="width: 50.7%"></div></div>
+        <span class="diff-score">50.7</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-label">Prevod</span>
+        <div class="diff-track"><div class="diff-fill" style="width: 63.7%"></div></div>
+        <span class="diff-score">63.7</span>
+      </div>
+      <div class="diff-row">
+        <span class="diff-label">NER</span>
+        <div class="diff-track"><div class="diff-fill" style="width: 83.2%"></div></div>
+        <span class="diff-score">83.2</span>
+      </div>
+    </div>
+    <p class="section-note">Prosek svih sedam modela po kategoriji.</p>
+  </section>
+
+  <section>
+    <h2>Nalazi</h2>
+    <div class="findings">
+
+      <div class="finding">
+        <div class="figure">37.1%</div>
+        <h3>Padeži su zid</h3>
+        <p>
+          Nijedan model ne prelazi 50%. <code>llama3.2</code> (25%) i
+          <code>qwen2.5:3b</code> (30%) su ispod nasumičnog pogađanja — bolje bi
+          prošli da su bacali novčić. Sedmopadežni sistem sa rekcijom predloga je
+          ono što ovi modeli nisu naučili.
+        </p>
+      </div>
+
+      <div class="finding">
+        <div class="figure">83.2%</div>
+        <h3>NER je najlakši</h3>
+        <p>
+          Izdvajanje imena, gradova i iznosa je uglavnom prepisivanje iz teksta.
+          Morfologija se ne dira, pa i najslabiji modeli prolaze — što pokazuje da
+          visok skor na NER-u ne znači znanje jezika.
+        </p>
+      </div>
+
+      <div class="finding">
+        <div class="figure">2B</div>
+        <h3>Veličina nije presudna</h3>
+        <p>
+          <code>gemma2:2b</code> tuče i <code>qwen2.5:3b</code> i
+          <code>phi3:mini</code>, oba veća od njega. Zastupljenost srpskog u
+          podacima za treniranje znači više od broja parametara.
+        </p>
+      </div>
+
+      <div class="finding">
+        <div class="figure">20%</div>
+        <h3>Ispod ~2B se gubi zadatak</h3>
+        <p>
+          <code>llama3.2:1b</code> na razumevanju često uopšte ne odgovori slovom
+          nego napiše nepovezan tekst. <code>phi3:mini</code> sklizne u ćirilicu i
+          piše rečenice koje nisu srpski: „Визимото је пропуштано".
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Rezultati po kategorijama</h2>
+    <div class="table-scroll">
+      <table>
+        <caption>
+          Crveno je ispod nasumičnog pogađanja (33.3%), zeleno je preko 90%.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Ukupno</th>
+            <th scope="col">Gramatika</th>
+            <th scope="col">Padeži</th>
+            <th scope="col">Pravopis</th>
+            <th scope="col">Razumev.</th>
+            <th scope="col">NER</th>
+            <th scope="col">Prevod</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">mistral 7B</th>
+            <td class="lead">71.5</td><td>65.0</td><td>50.0</td><td>66.7</td>
+            <td>73.3</td><td class="strong">95.3</td><td class="strong">96.7</td>
+          </tr>
+          <tr>
+            <th scope="row">gemma2:2b</th>
+            <td class="lead">60.9</td><td>50.0</td><td>45.0</td><td>53.3</td>
+            <td>60.0</td><td class="strong">96.7</td><td>73.3</td>
+          </tr>
+          <tr>
+            <th scope="row">qwen2.5:3b</th>
+            <td class="lead">56.6</td><td>65.0</td><td class="below">30.0</td><td>53.3</td>
+            <td>46.7</td><td class="strong">96.4</td><td>53.3</td>
+          </tr>
+          <tr>
+            <th scope="row">llama3.2 3B</th>
+            <td class="lead">54.6</td><td>55.0</td><td class="below">25.0</td><td>53.3</td>
+            <td>53.3</td><td>77.3</td><td>82.5</td>
+          </tr>
+          <tr>
+            <th scope="row">qwen2.5:1.5b</th>
+            <td class="lead">47.9</td><td>50.0</td><td>40.0</td><td class="below">26.7</td>
+            <td>40.0</td><td>76.9</td><td>60.0</td>
+          </tr>
+          <tr>
+            <th scope="row">phi3:mini</th>
+            <td class="lead">45.9</td><td>35.0</td><td>40.0</td><td>46.7</td>
+            <td>53.3</td><td>61.5</td><td>44.2</td>
+          </tr>
+          <tr>
+            <th scope="row">llama3.2:1b</th>
+            <td class="lead">38.3</td><td>35.0</td><td class="below">30.0</td><td>33.3</td>
+            <td class="below">20.0</td><td>78.4</td><td class="below">35.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kako se meri</h2>
+
+    <div class="method">
+      <h3>Ocenjivanje</h3>
+      <p>
+        Pitanja sa izborom se ocenjuju tačno/netačno. NER se ocenjuje <strong>F1
+        merom, ne odzivom</strong>: model koji prepiše celu rečenicu ima savršen
+        odziv, ali ga preciznost obara na 0.62 umesto 1.0. Bez toga se benchmark
+        trivijalno vara. Prevod se meri pokrivenošću ključnih pojmova, sa
+        priznatim sinonimima.
+      </p>
+      <p>
+        Poređenje zanemaruje dijakritike i <strong>transliterira ćirilicu</strong> —
+        „Niš", „Nis" i „Ниш" prolaze isto. Srpski je dvoazbučan, pa bi kažnjavanje
+        ćiriličnog odgovora merilo pismo umesto znanja jezika.
+      </p>
+    </div>
+
+    <div class="method">
+      <h3>Dva buga koja su obarala rezultate</h3>
+      <p>
+        Testovi ocenjivanja postoje jer su ove greške već pokvarile merenje. Obe su
+        nađene proverom sumnjivo niskog rezultata, pa su svi modeli mereni ponovo.
+      </p>
+      <div class="bugs">
+        <div class="bug">
+          <span class="bug-tag">regex</span>
+          <span>
+            Izvlačenje slova radilo je sa <code>IGNORECASE</code>, pa je
+            <code>[A-E]</code> hvatalo malo „a" unutar običnih reči — odgovor
+            „Dvojkodak je odgovor: B) Dva" čitan je kao <b>A</b>. Model je bio u
+            pravu, grader nije.
+          </span>
+        </div>
+        <div class="bug">
+          <span class="bug-tag">unicode</span>
+          <span>
+            Normalizacija teksta brisala je ćirilicu u prazan string, pa bi ispravan
+            ćirilični odgovor dobio nulu.
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="method">
+      <h3>Pokretanje</h3>
+      <pre><code>ollama serve
+python bench/run.py --model ollama:mistral:latest
+python bench/test_scoring.py</code></pre>
+      <p>
+        Modeli se pokreću lokalno preko ollame, bez API troška. Rezultati se upisuju
+        u <code>results/&lt;model&gt;.json</code> sa odgovorom i ocenom za svaki
+        zadatak, pa se svaka greška može pregledati pojedinačno.
+      </p>
+    </div>
+
+    <div class="method">
+      <h3>Ograničenja</h3>
+      <p>
+        Zadatke je pisao jedan izvorni govornik; standardni srpski, ekavica.
+        Skup je mali (95 zadataka), pa razlike ispod nekoliko procentnih poena nisu
+        značajne. Testirani su samo modeli koji staju na laptop (1B–7B) — veliki
+        komercijalni modeli bi verovatno probili plafon svuda osim na padežima.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <span class="status">
+      Statična verzija rezultata. Interaktivni leaderboard i skup zadataka idu na
+      Hugging Face kao Space.
+    </span>
+    <span>Kod i podaci: Apache 2.0 · Uroš Milutinović</span>
+  </footer>
+
+</div>
