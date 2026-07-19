@@ -1,21 +1,7 @@
----
-title: Serbian LLM Benchmark
-emoji: 🇷🇸
-colorFrom: blue
-colorTo: red
-sdk: gradio
-sdk_version: 6.20.0
-app_file: app.py
-pinned: false
-license: apache-2.0
-tags:
-  - leaderboard
-  - serbian
-  - evaluation
-  - benchmark
----
-
 # Serbian LLM Benchmark
+
+[**Rezultati uživo**](https://umilutinovic25-hash.github.io/serbian-llm-bench/) ·
+[Hugging Face Space](https://huggingface.co/spaces/uros69/serbian-llm-bench)
 
 Koliko mali open-source modeli zaista znaju srpski? Engleski leaderboardi to ne mere
 — model može biti odličan na MMLU i i dalje ne znati u koji padež ide imenica posle
@@ -102,9 +88,26 @@ ollama serve
 python bench/run.py --model ollama:mistral:latest        # ceo benchmark
 python bench/run.py --model ollama:gemma2:2b --categories padezi --verbose
 python bench/run.py --model mock                          # provera harnessa
+python bench/test_scoring.py                              # testovi ocenjivanja
 
-python app.py                                             # leaderboard lokalno
+python app.py                                             # Gradio leaderboard lokalno
 ```
+
+### Dodavanje modela
+
+```bash
+ollama pull gemma3:4b
+./update.sh gemma3:4b        # izmeri, regeneriši stranicu, objavi
+./update.sh                  # isto, ali za sve instalirane modele
+./update.sh --no-push        # bez objavljivanja
+```
+
+`update.sh` prvo pušta testove ocenjivanja i staje ako padnu — brojevi se ne
+objavljuju dok se grader ne proveri. Stranica u `docs/` je **generisana** iz
+`results/*.json` (`bench/build_page.py`), pa ne može da se raziđe sa merenjima.
+
+Za objavljivanje na Hugging Face treba `export HF_TOKEN=...` (besplatan write
+token); bez njega se objavljuje samo na GitHub.
 
 Rezultati se upisuju u `results/<model>.json` sa odgovorom i ocenom za svaki
 zadatak, pa se greške mogu pregledati pojedinačno.
@@ -113,17 +116,27 @@ zadatak, pa se greške mogu pregledati pojedinačno.
 
 Zadatke je pisao jedan izvorni govornik; standardni srpski, ekavica, latinica.
 Skup je mali (95 zadataka), pa razlike ispod nekoliko procentnih poena nisu
-značajne. Testirani su samo modeli koji staju na laptop (1.5B–7B) — veliki
+značajne. Testirani su samo modeli koji staju na laptop (1B–7B) — veliki
 komercijalni modeli bi verovatno probili plafon na svim kategorijama osim padeža.
 
 ## Struktura
 
 ```
-data/       zadaci, jedan JSONL po kategoriji
-bench/      tasks.py (učitavanje + ocenjivanje), providers.py, run.py
-results/    JSON rezultat po modelu
-app.py      Gradio leaderboard
+data/                 zadaci, jedan JSONL po kategoriji
+bench/tasks.py        učitavanje zadataka + ocenjivanje
+bench/providers.py    ollama i mock backend
+bench/run.py          pokretanje benchmarka
+bench/test_scoring.py testovi ocenjivanja
+bench/build_page.py   generisanje docs/index.html iz rezultata
+results/              JSON rezultat po modelu, sa odgovorom za svaki zadatak
+docs/index.html       objavljena stranica (generisana, ne uređivati ručno)
+app.py                Gradio leaderboard za lokalno pokretanje
+update.sh             izmeri sve, regeneriši stranicu, objavi
 ```
+
+Napomena: Gradio Space na Hugging Face free tieru traži PRO pretplatu, pa je
+objavljena statična verzija. `app.py` radi lokalno i spreman je za deploy ako
+PRO ikad postane opcija.
 
 Doprinosi su dobrodošli — posebno novi zadaci i modeli za testiranje.
 
