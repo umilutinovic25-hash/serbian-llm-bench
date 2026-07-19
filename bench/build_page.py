@@ -157,8 +157,9 @@ def build_findings(results: list[dict], averages: list[tuple[str, float]]) -> st
     hardest_key, hardest_avg = averages[0]
     easiest_key, easiest_avg = averages[-1]
 
+    # Tag, not display name: llama3.2:latest and llama3.2:1b share a display name.
     below = [
-        (d["display_name"], d["categories"][hardest_key]["score"])
+        (d["tag"], d["categories"][hardest_key]["score"])
         for d in results
         if hardest_key in d["categories"] and d["categories"][hardest_key]["score"] < CHANCE
     ]
@@ -172,6 +173,43 @@ def build_findings(results: list[dict], averages: list[tuple[str, float]]) -> st
     worst = results[-1]
     worst_key = min(worst["categories"], key=lambda k: worst["categories"][k]["score"])
     worst_score = worst["categories"][worst_key]["score"]
+
+    # "Size is not decisive" must name a model that actually outranks larger ones,
+    # or the page asserts something the data contradicts.
+    def billions(data: dict) -> float | None:
+        size = data["size"].removesuffix("B")
+        try:
+            return float(size)
+        except ValueError:
+            return None
+
+    upset, beaten = results[0], 0
+    for index, data in enumerate(results):
+        mine = billions(data)
+        if mine is None:
+            continue
+        larger = [
+            other for other in results[index + 1:]
+            if (theirs := billions(other)) is not None and theirs > mine
+        ]
+        if len(larger) > beaten:
+            upset, beaten = data, len(larger)
+
+    if beaten:
+        names = ", ".join(f"<code>{esc(o['tag'])}</code>" for o in results if
+                          (b := billions(o)) is not None and (u := billions(upset)) is not None
+                          and b > u and o["overall"] < upset["overall"])
+        upset_text = (
+            f"<code>{esc(upset['tag'])}</code> sa {esc(upset['size'])} parametara je "
+            f"ispred {beaten} {'većeg modela' if beaten == 1 else 'većih modela'} "
+            f"({names}). Zastupljenost srpskog u podacima za treniranje znači više "
+            f"od broja parametara."
+        )
+    else:
+        upset_text = (
+            "Poredak prati veličinu modela — nijedan manji model ne pretiče većeg. "
+            "Uz ovako mali uzorak modela to je očekivano, ali nije pravilo."
+        )
 
     return f"""      <div class="finding">
         <div class="figure">{hardest_avg}%</div>
@@ -193,12 +231,10 @@ def build_findings(results: list[dict], averages: list[tuple[str, float]]) -> st
       </div>
 
       <div class="finding">
-        <div class="figure">{esc(results[1]["size"] or "—")}</div>
+        <div class="figure">{esc(upset["size"] or "—")}</div>
         <h3>Veličina nije presudna</h3>
         <p>
-          <code>{esc(results[1]["tag"])}</code> je drugi uprkos tome što je manji od
-          više modela ispod sebe. Zastupljenost srpskog u podacima za treniranje
-          znači više od broja parametara.
+          {upset_text}
         </p>
       </div>
 
