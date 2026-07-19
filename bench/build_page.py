@@ -41,6 +41,7 @@ MODEL_SIZES = {
     "qwen2.5:1.5b": ("qwen2.5", "1.5B"),
     "phi3:mini": ("phi3 mini", "3.8B"),
     "llama3.2:1b": ("llama3.2", "1B"),
+    "gemma3:4b": ("gemma3", "4B"),
 }
 
 MONTHS = [
