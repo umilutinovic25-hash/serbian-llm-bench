@@ -7,34 +7,35 @@ Koliko mali open-source modeli zaista znaju srpski? Engleski leaderboardi to ne 
 — model može biti odličan na MMLU i i dalje ne znati u koji padež ide imenica posle
 predloga „uprkos".
 
-95 ručno pisanih zadataka, 6 kategorija, jednake uslove za svaki model.
+95 ručno pisanih zadataka, 6 kategorija, 8 modela, jednake uslove za svaki.
 
 ## Rezultati
 
 | # | Model | Ukupno | Gramatika | Padeži | Pravopis | Razumevanje | NER | Prevod |
 |---|---|---|---|---|---|---|---|---|
-| 1 | mistral (7B) | **71.5** | 65.0 | 50.0 | 66.7 | 73.3 | 95.3 | 96.7 |
-| 2 | gemma2:2b | 60.9 | 50.0 | 45.0 | 53.3 | 60.0 | 96.7 | 73.3 |
-| 3 | qwen2.5:3b | 56.6 | 65.0 | 30.0 | 53.3 | 46.7 | 96.4 | 53.3 |
-| 4 | llama3.2 (3B) | 54.6 | 55.0 | 25.0 | 53.3 | 53.3 | 77.3 | 82.5 |
-| 5 | qwen2.5:1.5b | 47.9 | 50.0 | 40.0 | 26.7 | 40.0 | 76.9 | 60.0 |
-| 6 | phi3:mini (3.8B) | 45.9 | 35.0 | 40.0 | 46.7 | 53.3 | 61.5 | 44.2 |
-| 7 | llama3.2:1b | 38.3 | 35.0 | 30.0 | 33.3 | 20.0 | 78.4 | 35.8 |
+| 1 | gemma3 (4B) | **79.5** | 70.0 | 55.0 | 86.7 | 86.7 | 100.0 | 95.0 |
+| 2 | mistral (7B) | 71.5 | 65.0 | 50.0 | 66.7 | 73.3 | 95.3 | 96.7 |
+| 3 | gemma2:2b | 60.9 | 50.0 | 45.0 | 53.3 | 60.0 | 96.7 | 73.3 |
+| 4 | qwen2.5:3b | 56.6 | 65.0 | 30.0 | 53.3 | 46.7 | 96.4 | 53.3 |
+| 5 | llama3.2 (3B) | 54.6 | 55.0 | 25.0 | 53.3 | 53.3 | 77.3 | 82.5 |
+| 6 | qwen2.5:1.5b | 47.9 | 50.0 | 40.0 | 26.7 | 40.0 | 76.9 | 60.0 |
+| 7 | phi3:mini (3.8B) | 45.9 | 35.0 | 40.0 | 46.7 | 53.3 | 61.5 | 44.2 |
+| 8 | llama3.2:1b | 38.3 | 35.0 | 30.0 | 33.3 | 20.0 | 78.4 | 35.8 |
 
 Nasumično pogađanje daje **33.3%** na pitanjima sa tri ponuđena odgovora.
 
 ## Nalazi
 
-**Padeži su zid.** Prosek svih modela je 37%, nijedan ne prelazi 50%, a `llama3.2`
-sa 25% i `qwen2.5:3b` sa 30% su **ispod nasumičnog pogađanja** — bolje bi prošli
-da su bacali novčić. Sedmopadežni sistem sa rekcijom predloga je ono što ovi modeli
+**Padeži su zid.** Prosek svih modela je 39%, nijedan ne prelazi 55%, a
+`llama3.2:latest` (25%), `qwen2.5:3b` i `llama3.2:1b` (po 30%) su **ispod
+nasumičnog pogađanja** — bolje bi prošli da su bacali novčić. Sedmopadežni sistem sa rekcijom predloga je ono što ovi modeli
 nisu naučili.
 
 **NER je najlakši (83.2% prosek).** Izdvajanje imena, gradova i iznosa je uglavnom
 prepisivanje iz teksta — morfologija se ne dira, pa i najslabiji modeli prolaze.
 
-**Broj parametara ne odlučuje.** `gemma2:2b` tuče `qwen2.5:3b` i `phi3:mini`,
-oba veća od njega, a razlika je najveća baš na padežima. Zastupljenost srpskog u
+**Broj parametara ne odlučuje.** `gemma3:4b` tuče `mistral` sa 7B, a `gemma2:2b`
+pretiče tri veća modela (`qwen2.5:3b`, `llama3.2`, `phi3:mini`). Zastupljenost srpskog u
 podacima za treniranje znači više od veličine.
 
 **Ispod ~2B model prestaje da prati zadatak.** `llama3.2:1b` na razumevanju ima

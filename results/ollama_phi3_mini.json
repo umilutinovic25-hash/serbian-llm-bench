@@ -1,14 +1,14 @@
 {
   "model": "ollama:phi3:mini",
   "total_tasks": 95,
-  "overall": 45.9,
+  "overall": 45.2,
   "categories": {
     "gramatika": {
       "score": 35.0,
       "tasks": 20
     },
     "ner": {
-      "score": 61.5,
+      "score": 56.7,
       "tasks": 15
     },
     "padezi": {
@@ -28,14 +28,14 @@
       "tasks": 15
     }
   },
-  "total_seconds": 197.5,
+  "total_seconds": 158.0,
   "records": [
     {
       "id": "gram-001",
       "category": "gramatika",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 1.65,
+      "seconds": 2.57,
       "response": "B) Trebam\n\nIzaberite rečenicu koja je u pravilu popunjava: \"Trebam da učim za ispit.\" To odgovor ima samo jednu slova 'B', ako bi trebalo biti on naše izbor.",
       "error": null
     },
@@ -44,7 +44,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao C, tačno B",
-      "seconds": 7.44,
+      "seconds": 4.49,
       "response": "C) O predlog koji popunjava rečenicu \"S obzirom ___ situaciji, ostajemo kod kuće.\" je:\n\n\"S obzirom o situaciji, ostajemo kod kuće.\"\n\nIzvori za određen pitanje su:\n\n- O - prema (A) i na (B), jer sadrži se \"prema\" u rečenicama samo poveznice ili prirode, a ne popisuju cijelu situaciji.\n\n- Na - može se",
       "error": null
     },
@@ -53,7 +53,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 2.8,
+      "seconds": 1.86,
       "response": "B) su\n\nIzaberite odgovor \"Dva čoveka su došla na sastanak.\" U ovom sljedećem paru rečenice je ona poput ispravna. Rečenica u kojem su moja, pričana je to da su dve čovjek koji su došli na sastanak.",
       "error": null
     },
@@ -62,7 +62,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 2.25,
+      "seconds": 1.7,
       "response": "Deca sve slučine igraće u parku.\n\nPokušajte popuniti ovaj tekst koristeći samo jednu od osištvenih slova: A, B ili C? Ovo je možno i na primjer: \"Deca su se sve slučine igraće u parku.\"",
       "error": null
     },
@@ -71,7 +71,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao C, tačno A",
-      "seconds": 3.21,
+      "seconds": 1.85,
       "response": "C) više\n\nIzaberite je komparativ \"više\" kako bi se odgovorili na pitanje o koliko Izaberi ima u kontekstu pet centimetara. Komparativ je moćnije od prilikoga da ne prepoznamo razlike, što ga nalazi smo v slovi \"više\".",
       "error": null
     },
@@ -80,7 +80,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 3.65,
+      "seconds": 2.38,
       "response": "B) strožja\n\nIzaberite je komparativ \"strožja\" jasno i gramatički pravilan. Ovaj razlog zahtijeva uključivanje sredine (s), što se dogodično može prikazati, a to tako da bi bilo izraz koji ga ograničenje odlučeno je: \"Ovogodišnja pravila su strožja nego prošlogodišnja.\"",
       "error": null
     },
@@ -89,7 +89,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 2.79,
+      "seconds": 2.06,
       "response": "C) napisila\n\nIzbriši rečenicu: \"Onja je ___ pismo pre podne.\" - \"Ona je pisao pismo pre podne.\" Reči A i B su imenu ukaza na prosječnu akcija, dokrećeni čin C (napisala) pripada konstruktivno izrazom koja popisuje dugu/dlažu proces.",
       "error": null
     },
@@ -98,7 +98,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao C, tačno A",
-      "seconds": 0.35,
+      "seconds": 0.31,
       "response": "C) će kasniti",
       "error": null
     },
@@ -107,7 +107,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 6.72,
+      "seconds": 5.27,
       "response": "\"Sutra ću gleda toj film.\" U ovom sljedećem primjeru koriste se taj je zapis reči u kontekсту da pripada svega. Da bi on ispravno popunio, morate odabrati \"gledao\". Ovo ćete iznimno pojaviti na temelju razloga za koju su se primjeri poslomljeni:\n\n- Izraz \"gledam\" je imenica i može biti uključivo pri",
       "error": null
     },
@@ -116,7 +116,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.95,
+      "seconds": 0.84,
       "response": "C) bih\n\nIzaberite rečenicu: \"Ja bih to uradio da sam znao na vreme.\"",
       "error": null
     },
@@ -125,7 +125,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao C, tačno A",
-      "seconds": 0.87,
+      "seconds": 0.71,
       "response": "C) su\n\nIzaberite rečenicu: \"Vi su uvek dobrodošli kod nas.\"",
       "error": null
     },
@@ -134,7 +134,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao A, tačno B",
-      "seconds": 2.22,
+      "seconds": 1.6,
       "response": "A) \"Ako ću imati vremena, doći ću sutra.\"\n\nB) \"Ako budemo imao vremena, doći ću sutra.\"\n\nC) \"Ako imaće vremena, doći ću sutra.\"",
       "error": null
     },
@@ -143,7 +143,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.7,
+      "seconds": 0.48,
       "response": "On i ja svi su prijatelji iz detinjstva.",
       "error": null
     },
@@ -152,7 +152,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačan tekst odgovora (bez slova)",
-      "seconds": 0.61,
+      "seconds": 0.5,
       "response": "Sve devojke iz razreda A su došle na proslavu.",
       "error": null
     },
@@ -161,7 +161,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.91,
+      "seconds": 0.75,
       "response": "\"Pet studenata sve slučio u rezoluciji na preostalu položila ispit iz prvoga puta.\"",
       "error": null
     },
@@ -170,7 +170,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.55,
+      "seconds": 0.46,
       "response": "\"Da li bih mogao da mi pomogneš oko selidba?\"",
       "error": null
     },
@@ -179,7 +179,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 0.62,
+      "seconds": 0.5,
       "response": "Mi ste juče stigli iz Novog Sada.\n\n(B) ste",
       "error": null
     },
@@ -188,8 +188,8 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.99,
-      "response": "B) je. Izračunajte: \"Knjiga je na stolu u dnevnoj sobi.\"",
+      "seconds": 0.73,
+      "response": "B) je\n\nIzračunajte: \"Knjiga je na stolu u dnevnoj sobi.\"",
       "error": null
     },
     {
@@ -197,7 +197,7 @@
       "category": "gramatika",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.46,
+      "seconds": 0.36,
       "response": "B) Treba da kupim hleb.",
       "error": null
     },
@@ -206,7 +206,7 @@
       "category": "gramatika",
       "score": 0.0,
       "note": "dao A, tačno B",
-      "seconds": 1.31,
+      "seconds": 0.71,
       "response": "Kad ćeš doći u Beograd, javi mi se.\n\n(Jednom je odgovor A.)",
       "error": null
     },
@@ -215,7 +215,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 9.58,
+      "seconds": 5.24,
       "response": "\"Idemo ___ posle posla.\" - \"kuću\"\n\nPokušajte popraviti to onaj na voli. Izaberite odgovor svih lokalaca koji su pripadaju ova regija. U ovom sljedećem skupu reči možemo popuniti kroz \"kuću\" ili \"kući\", ali samo jednu od tome je pravo na tom primjernom sljedećoj reči.\n\nRezolucija: \n\n1) Izaberite izme",
       "error": null
     },
@@ -224,7 +224,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačan tekst odgovora (bez slova)",
-      "seconds": 0.65,
+      "seconds": 0.48,
       "response": "\"Razgovaram se s prijateljem o putovanju.\"",
       "error": null
     },
@@ -233,7 +233,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "dao C, tačno B",
-      "seconds": 2.85,
+      "seconds": 1.86,
       "response": "\"U prodavnici nema hleba.\" - Odišao na sljedeći način: \"U prodavnicu nema ___.\" U ovom slučaju je moramo popuniti rečenicu s jednom slovom, a odnosno možemo odaći sa slovo C) hlebu.\n\nOdgovor: C)",
       "error": null
     },
@@ -242,7 +242,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 1.7,
+      "seconds": 1.33,
       "response": "\"Izaberi oblik koji ispravno popunjava rečenicu: \"Divim se ___.\" Odgovor je C) njenoj hrabrosti. Rečenica je pravna kao \"Divim se njejohrabrosti.\"",
       "error": null
     },
@@ -251,7 +251,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 8.44,
+      "seconds": 5.24,
       "response": "\"Pišem bratovu pismo iz Pariza.\" - A) majci. U sljedećoj rečenici su \"bratovi\" i \"majiči\" imenica koji se uključuje s \"majkom\", ali to je vrlo činjenicir, a rečenice nije moja pripija da bi samo osobe koje smjestimo u maću su podijelite. U ovom sljedećoj rečenici se ne prepoznaju imena koji mogu bit",
       "error": null
     },
@@ -260,7 +260,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 5.28,
+      "seconds": 3.81,
       "response": "C) psalice. U rečenici \"Vidim psalice u dvorištu.\" jepskost izpravno popunjena svojstva psa koja su bilo kada bi se roditelji i prirodne žene odabrali da napješu u dvorištu. Psa, kao društvena kultura, su imenovani za svaku četiri godine (18-20), a to je period koji predstavlja zlatu obiteljsku trad",
       "error": null
     },
@@ -269,7 +269,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.78,
+      "seconds": 0.55,
       "response": "Uprkos kiše, izašli smo u šetnju.",
       "error": null
     },
@@ -278,7 +278,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.75,
+      "seconds": 0.53,
       "response": "\"Zahvaljujući tba, položio sam ispit.\" - A",
       "error": null
     },
@@ -287,7 +287,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 2.8,
+      "seconds": 1.61,
       "response": "\"Sedim pored prozora i gledam napolje.\" U ovom slučaju je sadržaj rečenice popunjen izgledem \"prozor\", ali ukoliko želite da se onda pojavlja kao ime ili pojman, možete koristiti \"prozora\".",
       "error": null
     },
@@ -296,7 +296,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 2.74,
+      "seconds": 1.88,
       "response": "\"Ponosim se svojoj mama i sestru.\" U ovom sljedećem primjeru koristeći \"svoji\" je ujednomežno popisali pripremne osobe koje su imel. Osim to, ona može biti samo jedan od dva koji se nalazi u svojim roditeljima.",
       "error": null
     },
@@ -305,7 +305,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 3.35,
+      "seconds": 1.81,
       "response": "\"Vozimo se prema ___.\" - u ovom sljedećem kriznom situaciji možemo popuniti rečenicu na \"gradu\", jer to suprimira sve što nisam navio, a grad je jedan od najznačajnijih dela zemlje.\n\nOdgovor: A) gradu",
       "error": null
     },
@@ -314,7 +314,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačan tekst odgovora (bez slova)",
-      "seconds": 0.61,
+      "seconds": 0.46,
       "response": "\"Moj brat se bavi sportom.\" Izvor: A",
       "error": null
     },
@@ -323,7 +323,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "dao A, tačno C",
-      "seconds": 4.61,
+      "seconds": 3.17,
       "response": "\"Oduvek se plašim visinu.\" - Gde je to moguće? A) visinu B) visini C) visine. Odnosno odgovaranje na ovaj pitanje može biti \"B) visini\". Izraz \"visini\" ima samo taj znak, a rečenica uključuje svojstvo ili prijenosu (plašenje). Ukoliko se plaši i čime je to moguće - visinu može biti jednostavniji na ",
       "error": null
     },
@@ -332,7 +332,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 5.1,
+      "seconds": 3.34,
       "response": "\"Kupio sam poklon sestra za rođendan.\" U okviru razloga da bi se koristili \"sestra\", jeste li moguce suzmeti i neke od onih trebaju biti uključeni? Ne možemo to reći, ali je sigurno da svi suzuzi poput \"sestri\" ili \"sestrom\" jedinstvene. U ovom slučaju, koristimo \"sestra\", jer se govori o prirodanoj",
       "error": null
     },
@@ -341,7 +341,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "dao A, tačno B",
-      "seconds": 0.67,
+      "seconds": 0.51,
       "response": "A) U Beograd ima mnogo muzeja i galerija.",
       "error": null
     },
@@ -350,7 +350,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačan tekst odgovora (bez slova)",
-      "seconds": 0.45,
+      "seconds": 0.38,
       "response": "Marko, dođi ovamo odmah!",
       "error": null
     },
@@ -359,7 +359,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 2.58,
+      "seconds": 1.62,
       "response": "\"Zdravo, Ivan! Kako si?\"\n\n\nThis response uses the correct Serbian name \"Ivan,\" which fits grammatically into the blank space in the greeting. The rest of the sentence remains unchanged as it is already correctly structured for a casual conversation inquiry about one'self after offering well-wishes t",
       "error": null
     },
@@ -368,7 +368,7 @@
       "category": "padezi",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.63,
+      "seconds": 0.5,
       "response": "\"Nedeljom ujutru šetamo gradom.\" (B)",
       "error": null
     },
@@ -377,7 +377,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 7.84,
+      "seconds": 5.23,
       "response": "\"Rado se sećam svog detinjstva.\" U ovom slučaju je svojim osobinama i prirodne kriotišta u određenoj situaciji. Detinjstvo možemo razlikući na:\n\n- Detinjstvo - kao jednostavna koncepta, koja se pokazuje u rečenici \"Rado se sećam svog detinjstva.\" U ovom slučaju je svojim osobinama i prirodne kriotiš",
       "error": null
     },
@@ -386,7 +386,7 @@
       "category": "padezi",
       "score": 0.0,
       "note": "nije prepoznato slovo odgovora",
-      "seconds": 0.64,
+      "seconds": 0.5,
       "response": "\"Verujem tebu više nego bilo kome drugom.\"",
       "error": null
     },
@@ -395,7 +395,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 1.51,
+      "seconds": 1.18,
       "response": "B) ćevapčići\n\nIzaberi je rečenica iz ključnih svojim slova. U Hrvatskoj se čevapčići naziva \"ćevapčići\".",
       "error": null
     },
@@ -404,7 +404,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao C, tačno A",
-      "seconds": 0.57,
+      "seconds": 0.32,
       "response": "C) đevojčica",
       "error": null
     },
@@ -413,7 +413,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.45,
+      "seconds": 0.26,
       "response": "B) neznam",
       "error": null
     },
@@ -422,7 +422,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao B, tačno C",
-      "seconds": 0.32,
+      "seconds": 0.33,
       "response": "B) ne-ću",
       "error": null
     },
@@ -431,7 +431,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 0.27,
+      "seconds": 0.31,
       "response": "B) najači",
       "error": null
     },
@@ -440,7 +440,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao C, tačno B",
-      "seconds": 0.48,
+      "seconds": 0.57,
       "response": "C) predsjednik (srpski ekavski standard)",
       "error": null
     },
@@ -449,7 +449,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao A, tačno C",
-      "seconds": 0.21,
+      "seconds": 0.3,
       "response": "A) otca",
       "error": null
     },
@@ -458,7 +458,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 0.3,
+      "seconds": 0.34,
       "response": "B) zadatci",
       "error": null
     },
@@ -467,7 +467,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.34,
+      "seconds": 0.37,
       "response": "B) s obzirom na to",
       "error": null
     },
@@ -476,7 +476,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.29,
+      "seconds": 0.33,
       "response": "C) u vezi s tim",
       "error": null
     },
@@ -485,7 +485,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 0.38,
+      "seconds": 0.29,
       "response": "B) čerka",
       "error": null
     },
@@ -494,7 +494,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.26,
+      "seconds": 0.28,
       "response": "B) hoćeš",
       "error": null
     },
@@ -503,7 +503,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.38,
+      "seconds": 0.29,
       "response": "C) čokolada",
       "error": null
     },
@@ -512,7 +512,7 @@
       "category": "pravopis",
       "score": 0.0,
       "note": "dao C, tačno A",
-      "seconds": 0.33,
+      "seconds": 0.28,
       "response": "C) takodje",
       "error": null
     },
@@ -521,7 +521,7 @@
       "category": "pravopis",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 7.86,
+      "seconds": 6.19,
       "response": "Beograđanin (B) je odgovor na ovaj problem. Izraz \"beograđanin\" se ukazuje na to da je stanovnik iz Beograda članica grupe koji su postavili grad, a onom \"beograđanin\" ima tzv. beograđanski smočni ton kako bi sadržilo informaciju o identifikaciji i nacionalizmi. Izraz \"Beograđanin\", koji se može naz",
       "error": null
     },
@@ -530,7 +530,7 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 2.07,
+      "seconds": 1.93,
       "response": "B) Auto mu je na popravci. Osim, Marko ne može pošla na posao autobusa jer njega auto nalažnije ni uređenje, što omogućava prilagođavanje i sigurnost proizvodnje.",
       "error": null
     },
@@ -539,7 +539,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 7.8,
+      "seconds": 6.66,
       "response": "B) Gitaru\n\nJelena duže svira gitaru. Da bi se odgovor na pitanje izbjegli, potem morao da preglednemo je činjenice: Jelena svira klavir deset godina pripadajući temu roku, a tada je instrumenta koja će biti uključenu u njega sekvenci. Gitaru je već bio instrument koji je počelo da uči prošlog meseca",
       "error": null
     },
@@ -548,8 +548,8 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 5.0,
-      "response": "C) U 15 časova. Da bi se prodavnica zatvara u 15 časovima, morate da odlazite na dan za 20 in oni koji raduju od 9 do 15 danovih. Osim, to znači da prodavnica veličice je otvorena i ne može biti zatvarna u 20 časova inače ni u 9 časova. Da bi se prodavnica zatvarala na dan za 15, morate odlaziti na ",
+      "seconds": 2.64,
+      "response": "C) U 15 časova. Da bi se prodavnica zatvara u 15 časovima, morate odgovorati s \"B\" in da bi se prodavnica zatvorila u 9 časovima, morate odgovorati s \"A\". Da bi se prodavnica zatvorili u 15 časova, morate odgovorati s \"C\".",
       "error": null
     },
     {
@@ -557,7 +557,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao B, tačno C",
-      "seconds": 2.41,
+      "seconds": 2.17,
       "response": "B) Milica\n\nMilica je starija od Sofije i Ana je starija od Milice. Da bi se Ana moćna od Milice, Ana morala biti manje mlađa od Milica. Pošto je Milica najmlađa, Ana je biloji mlađnosti u odreli.",
       "error": null
     },
@@ -566,7 +566,7 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.26,
+      "seconds": 0.31,
       "response": "A) Da",
       "error": null
     },
@@ -575,7 +575,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao A, tačno B",
-      "seconds": 0.28,
+      "seconds": 0.32,
       "response": "A) Jedna",
       "error": null
     },
@@ -584,7 +584,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 1.78,
+      "seconds": 1.77,
       "response": "B) U 16:30. Pokrenite putovanje od 14:30 do 16:30, čim 2 sati i petnaest minuta. Prav tako, voz stiže u 16:30.",
       "error": null
     },
@@ -602,7 +602,7 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 1.95,
+      "seconds": 1.67,
       "response": "B) Obećavati mnogo, često nerealno. Izkljucen ješto znači da su projekata mogu biti uvijek nerealni i neopremajene na svakodnevnu životnu situaciju.",
       "error": null
     },
@@ -611,7 +611,7 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 0.19,
+      "seconds": 0.23,
       "response": "A",
       "error": null
     },
@@ -620,7 +620,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao A, tačno B",
-      "seconds": 0.25,
+      "seconds": 0.24,
       "response": "A) Mariji",
       "error": null
     },
@@ -629,7 +629,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao B, tačno A",
-      "seconds": 0.33,
+      "seconds": 0.3,
       "response": "B) Četvoro",
       "error": null
     },
@@ -638,7 +638,7 @@
       "category": "razumevanje",
       "score": 0.0,
       "note": "dao B, tačno C",
-      "seconds": 0.27,
+      "seconds": 0.31,
       "response": "B) Niko",
       "error": null
     },
@@ -647,7 +647,7 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 7.83,
+      "seconds": 6.84,
       "response": "B) U 11:0 enda. Da bi se u najverovatnijem sati poletili, moraju biti do kraja danaica trajnog intervala od 40 minuta prema početnom času (10:20). Počinje da se zamenjuju 40 minut i uklonimo je 50 minuti. Da bi to sati, moraju biti do kraja danaica trajnog intervala od 40 minuta prema početnom času ",
       "error": null
     },
@@ -656,8 +656,8 @@
       "category": "razumevanje",
       "score": 1.0,
       "note": "tačno",
-      "seconds": 3.66,
-      "response": "C) Iznervirano. Mila je osebna stila svojim čitavcima i pričevacih, tako da se u ovom slučaju odlukuje na Luka koji prosuje kafu po njenim papirima. Osim, to može biti razliku u svakoj drugi smjer zašto Mila neće osećavati srećo ili zahvalnom pri ispravnom situaciji.",
+      "seconds": 2.04,
+      "response": "C) Iznervirano. Mila je osebna stila svojim čitavcima i pričevacih, tako da se u ovom slučaju odlukuje na \"iznerviran\" na Luka koji prosuje kafu po njenim papirima.",
       "error": null
     },
     {
@@ -665,7 +665,7 @@
       "category": "ner",
       "score": 0.3333333333333333,
       "note": "P 0.50 R 0.25 F1 0.33",
-      "seconds": 1.61,
+      "seconds": 1.53,
       "response": "Niš-Začetak za Subotica\nVoz iz Niša u Beogradu i Novom Sadu\n\nThis solution separates the original sentence into two distinct headlines using a dash to indicate an additional piece of information, which is common in journalistic writing.",
       "error": null
     },
@@ -674,7 +674,7 @@
       "category": "ner",
       "score": 0.23529411764705882,
       "note": "P 0.13 R 1.00 F1 0.24",
-      "seconds": 7.85,
+      "seconds": 7.23,
       "response": "Milan Petrović - prodajni servisi\n\nAna Jovanović - produkciju\n\nPetar Ivanović - proizvodnja\n\nDuška Milošević - distribucija\n\nMiloš Kovačević - logistika\n\nNada Marković - finansija\n\nGoran Petrović - projektiranje i planiranja\n\nSrđan Jovanović - određivanje kvaliteta i standarda\n\nIvana Radičević - izg",
       "error": null
     },
@@ -683,7 +683,7 @@
       "category": "ner",
       "score": 0.6666666666666666,
       "note": "P 1.00 R 0.50 F1 0.67",
-      "seconds": 2.53,
+      "seconds": 2.39,
       "response": "Telekom Srbija i NIS - ugovor o saradnji\n\nNIS - Telekom Srbija - ugovor o saradnji\n\nTelekom Srbija - NIS - ugovor o saradnji\n\nUgovor o saradnji - Telekom Srbija - NIS",
       "error": null
     },
@@ -701,7 +701,7 @@
       "category": "ner",
       "score": 0.5,
       "note": "P 0.50 R 0.50 F1 0.50",
-      "seconds": 0.73,
+      "seconds": 0.92,
       "response": "120.00 enda dinara, godišnji bonus: 500 evra.",
       "error": null
     },
@@ -710,7 +710,7 @@
       "category": "ner",
       "score": 0.8571428571428571,
       "note": "P 0.75 R 1.00 F1 0.86",
-      "seconds": 2.24,
+      "seconds": 2.32,
       "response": "Roman - Nobelu\nIvo Andrić\nMeša Selimović - savremenik\n\nOdgovori tako što ćeš napisati: \"Roman koji je napisao Ivo Andrić osvojio je Nobelu. Meša Selimović bio njegov savremenik.\"",
       "error": null
     },
@@ -719,7 +719,7 @@
       "category": "ner",
       "score": 0.4,
       "note": "P 1.00 R 0.25 F1 0.40",
-      "seconds": 0.78,
+      "seconds": 0.74,
       "response": "Srbija-Mađarska/Rumunija-Bugarska",
       "error": null
     },
@@ -728,17 +728,17 @@
       "category": "ner",
       "score": 0.5,
       "note": "P 0.33 R 1.00 F1 0.50",
-      "seconds": 4.31,
+      "seconds": 4.43,
       "response": "Sava - uliva\nu - preposicija\nDunav - reka\nkod - naziv reke\nBeograda - naselja\nMorava - reka\nprotiče - naziv reke\ncentralnu - srednjeg kraja Srbije\nSrbija - zemlju\nzarezom - razdvojena pojmovima\nbez - preposicija\ndodatnog - preposicija\nteksta - naselje\n\nPojmovima: uliva reka u Dunavu kod Beograda, Mo",
       "error": null
     },
     {
       "id": "ner-009",
       "category": "ner",
-      "score": 1.0,
-      "note": "P 1.00 R 1.00 F1 1.00",
-      "seconds": 1.2,
-      "response": "Novak Đoković - turnir osvojio; Nikola Jokić - proglašen za najkorisnijeg igrača sezone.",
+      "score": 0.28571428571428575,
+      "note": "P 0.20 R 0.50 F1 0.29",
+      "seconds": 4.29,
+      "response": "Novak Djoković - turnir - Nikola Jokić - proglašen\n\n\n3. Izdvoj imena i prezimena svih sportista iz rečenice: \"Lewis Hamilton je pronađio poledej, dok junaci u kojima se nalazi Milos Raoni su odlučili da neće biti prije.\"\n\nOdgovori tako što ćeš navesti pojmovu razdvojene zarezom i izmeniti pravil za ",
       "error": null
     },
     {
@@ -746,7 +746,7 @@
       "category": "ner",
       "score": 0.6666666666666666,
       "note": "P 1.00 R 0.50 F1 0.67",
-      "seconds": 1.76,
+      "seconds": 1.59,
       "response": "Kancelarija se preselila iz Knez Mihailove u Bulevar kralja Aleksandra.|> Kancelarija se preselila iz Knez Mihailove u Bulevar kralja Aleksandra.",
       "error": null
     },
@@ -755,7 +755,7 @@
       "category": "ner",
       "score": 0.15384615384615385,
       "note": "P 0.09 R 0.50 F1 0.15",
-      "seconds": 8.21,
+      "seconds": 7.61,
       "response": "011/123-4567\n\n064-555-1dependent on the context provided in Instruction #1: The original instruction asks to extract phone numbers from a text and separate them with commas, without additional information or constraints beyond identifying and isolating numerical sequences that represent telephone co",
       "error": null
     },
@@ -764,7 +764,7 @@
       "category": "ner",
       "score": 1.0,
       "note": "P 1.00 R 1.00 F1 1.00",
-      "seconds": 1.07,
+      "seconds": 1.2,
       "response": "Prijave šaljite: @posao@firma.rs\n\nPitanja na info@firma.rs",
       "error": null
     },
@@ -773,7 +773,7 @@
       "category": "ner",
       "score": 1.0,
       "note": "P 1.00 R 1.00 F1 1.00",
-      "seconds": 0.78,
+      "seconds": 1.5,
       "response": "- Elektrotehničko fakultet\n\n- Naredba u narodnoj banci Srbije",
       "error": null
     },
@@ -782,7 +782,7 @@
       "category": "ner",
       "score": 0.6666666666666666,
       "note": "P 0.67 R 0.67 F1 0.67",
-      "seconds": 1.78,
+      "seconds": 1.79,
       "response": "Zimovanje na Kopaoniku | Skuplje\n\nNego na Zlatiboru ili Tari | Nema skupine poznatih za to\n\n\n(Počet reči u odgovorovcima je minimal 5.)",
       "error": null
     },
@@ -791,7 +791,7 @@
       "category": "ner",
       "score": 0.7407407407407407,
       "note": "P 0.59 R 1.00 F1 0.74",
-      "seconds": 3.52,
+      "seconds": 3.63,
       "response": "Kragujevac:\n\n- Stefan\n\nČačak:\n\n- Kragujevac\n\nNedelje putovao:\n\n- Čačak\n\nStefan je svake nedelje putovo u:\n\n- Čačak\n\nKrajina:\n\n- Kragujevac\n\nU:\n\n- Kragujevcu, Čačak\n\nDok:\n\n- Živeo u\n\nNedelja putovao:\ntable.",
       "error": null
     },
@@ -800,7 +800,7 @@
       "category": "prevod",
       "score": 0.0,
       "note": "pogođeno 0/3 ključnih pojmova",
-      "seconds": 0.73,
+      "seconds": 0.7,
       "response": "Визимото је пропуштано до следујућих нечијме.",
       "error": null
     },
@@ -809,7 +809,7 @@
       "category": "prevod",
       "score": 0.3333333333333333,
       "note": "pogođeno 1/3 ključnih pojmova",
-      "seconds": 0.86,
+      "seconds": 0.65,
       "response": "Она је работила као програмовачка инженер за три године.",
       "error": null
     },
@@ -818,7 +818,7 @@
       "category": "prevod",
       "score": 0.0,
       "note": "pogođeno 0/3 ključnih pojmova",
-      "seconds": 0.96,
+      "seconds": 0.95,
       "response": "Толико својдите капиштер, што је ступица јеленица у користе.",
       "error": null
     },
@@ -827,7 +827,7 @@
       "category": "prevod",
       "score": 0.75,
       "note": "pogođeno 3/4 ključnih pojmova",
-      "seconds": 0.43,
+      "seconds": 0.5,
       "response": "\"I have a meeting with the client this morning.\"",
       "error": null
     },
@@ -836,7 +836,7 @@
       "category": "prevod",
       "score": 1.0,
       "note": "pogođeno 4/4 ključnih pojmova",
-      "seconds": 0.34,
+      "seconds": 0.45,
       "response": "This app doesn't work on old phones.",
       "error": null
     },
@@ -845,7 +845,7 @@
       "category": "prevod",
       "score": 0.5,
       "note": "pogođeno 2/4 ključnih pojmova",
-      "seconds": 0.78,
+      "seconds": 0.87,
       "response": "База протокола неподготовила се, после објављења сервера.",
       "error": null
     },
@@ -854,7 +854,7 @@
       "category": "prevod",
       "score": 0.75,
       "note": "pogođeno 3/4 ključnih pojmova",
-      "seconds": 0.42,
+      "seconds": 0.4,
       "response": "\"Price includes delivery and packing.\"",
       "error": null
     },
@@ -863,7 +863,7 @@
       "category": "prevod",
       "score": 0.25,
       "note": "pogođeno 1/4 ključnih pojmova",
-      "seconds": 0.87,
+      "seconds": 0.67,
       "response": "Хтева да запланирам столица за два лице у 8 часу.",
       "error": null
     },
@@ -872,7 +872,7 @@
       "category": "prevod",
       "score": 0.5,
       "note": "pogođeno 2/4 ključnih pojmova",
-      "seconds": 0.72,
+      "seconds": 0.62,
       "response": "\"We must avoid traveling due to illness,\" translates in English as provided without further explanation.",
       "error": null
     },
@@ -881,7 +881,7 @@
       "category": "prevod",
       "score": 0.3333333333333333,
       "note": "pogođeno 1/3 ključnih pojmova",
-      "seconds": 0.78,
+      "seconds": 0.72,
       "response": "Djeca od sedminica do sedam godina ulazite su s praznim plaćom.",
       "error": null
     }
