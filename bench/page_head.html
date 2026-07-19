@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="sr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Benchmark koji meri koliko mali open-source modeli znaju srpski: 95 zadataka, 7 modela, 6 kategorija.">
+<title>Srpski LLM Benchmark — koliko mali modeli znaju srpski</title>
+
+<style>
+  :root {
+    --paper: #F4F5F7;
+    --surface: #FFFFFF;
+    --ink: #1A1D24;
+    --ink-soft: #5A6070;
+    --ink-faint: #8B92A3;
+    --rule: #D8DBE0;
+    --accent: #C42B1C;
+    --accent-soft: #F2D8D4;
+    --good: #2D6A4F;
+    --bar: #3A4152;
+    --bar-track: #E4E7EC;
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14161B;
+      --surface: #1C1F26;
+      --ink: #E8EAEE;
+      --ink-soft: #A5ACBB;
+      --ink-faint: #737B8C;
+      --rule: #2E323C;
+      --accent: #E8695A;
+      --accent-soft: #3A2320;
+      --good: #4FA97D;
+      --bar: #7E8798;
+      --bar-track: #262A33;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #14161B;
+    --surface: #1C1F26;
+    --ink: #E8EAEE;
+    --ink-soft: #A5ACBB;
+    --ink-faint: #737B8C;
+    --rule: #2E323C;
+    --accent: #E8695A;
+    --accent-soft: #3A2320;
+    --good: #4FA97D;
+    --bar: #7E8798;
+    --bar-track: #262A33;
+  }
+
+  :root[data-theme="light"] {
+    --paper: #F4F5F7;
+    --surface: #FFFFFF;
+    --ink: #1A1D24;
+    --ink-soft: #5A6070;
+    --ink-faint: #8B92A3;
+    --rule: #D8DBE0;
+    --accent: #C42B1C;
+    --accent-soft: #F2D8D4;
+    --good: #2D6A4F;
+    --bar: #3A4152;
+    --bar-track: #E4E7EC;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 5rem) clamp(1.1rem, 4vw, 2.5rem) 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  /* ---------- header ---------- */
+
+  .masthead { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .masthead h1 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  .masthead h1 .alt {
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+
+  .standfirst {
+    font-size: 1.12rem;
+    color: var(--ink-soft);
+    max-width: 44ch;
+    text-wrap: pretty;
+  }
+
+  .facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+  .facts b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+
+  section { display: flex; flex-direction: column; gap: 1.2rem; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.6rem;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-note {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 62ch;
+    text-wrap: pretty;
+  }
+
+  p { margin: 0; max-width: 64ch; text-wrap: pretty; }
+
+  /* ---------- leaderboard ---------- */
+
+  .board {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+  }
+
+  .board-row {
+    display: grid;
+    grid-template-columns: 1.6rem minmax(7rem, 1fr) minmax(8rem, 2.2fr) 3.6rem;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .board-row:last-child { border-bottom: 0; }
+
+  .board-head {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-top: 0.85rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .rank {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .model-name {
+    font-family: var(--mono);
+    font-size: 0.87rem;
+    font-weight: 500;
+  }
+  .model-size { color: var(--ink-faint); font-weight: 400; }
+
+  .track {
+    position: relative;
+    height: 1.35rem;
+    background: var(--bar-track);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .fill {
+    height: 100%;
+    background: var(--bar);
+    border-radius: 2px 0 0 2px;
+  }
+  .board-row:first-of-type .fill { background: var(--good); }
+
+  /* the thesis: chance level, marked across every bar */
+  .chance {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 33.3%;
+    width: 0;
+    border-left: 2px dashed var(--accent);
+  }
+
+  .score {
+    font-family: var(--mono);
+    font-size: 0.92rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+
+  .board-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--ink-soft);
+  }
+  .legend-mark {
+    display: inline-block;
+    width: 1.6rem;
+    border-top: 2px dashed var(--accent);
+  }
+
+  /* ---------- category table ---------- */
+
+  .table-scroll { overflow-x: auto; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+
+  caption {
+    text-align: left;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    padding-bottom: 0.9rem;
+    max-width: 62ch;
+  }
+
+  th, td {
+    padding: 0.5rem 0.7rem;
+    border-bottom: 1px solid var(--rule);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  thead th {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    border-bottom-color: var(--ink-faint);
+  }
+
+  th[scope="row"], thead th:first-child {
+    text-align: left;
+    font-family: var(--mono);
+    font-weight: 500;
+  }
+  th[scope="row"] { font-size: 0.85rem; color: var(--ink); }
+
+  tbody td { font-family: var(--mono); color: var(--ink-soft); }
+  td.lead { color: var(--ink); font-weight: 600; }
+  td.below { color: var(--accent); }
+  td.strong { color: var(--good); }
+
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+
+  /* ---------- difficulty ---------- */
+
+  .difficulty { display: flex; flex-direction: column; gap: 0.55rem; }
+
+  .diff-row {
+    display: grid;
+    grid-template-columns: minmax(6rem, 8rem) 1fr 3rem;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .diff-label { font-size: 0.88rem; }
+
+  .diff-track {
+    position: relative;
+    height: 0.6rem;
+    background: var(--bar-track);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .diff-fill { height: 100%; background: var(--bar); border-radius: 999px; }
+  .diff-fill.hard { background: var(--accent); }
+
+  .diff-score {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- findings ---------- */
+
+  .findings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.6rem 2.2rem;
+  }
+
+  .finding { display: flex; flex-direction: column; gap: 0.45rem; }
+
+  .finding h3 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 1.12rem;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .finding p { font-size: 0.93rem; color: var(--ink-soft); }
+
+  .finding .figure {
+    font-family: var(--mono);
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+  }
+
+  /* ---------- method ---------- */
+
+  .method {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 1.5rem clamp(1.1rem, 3vw, 1.8rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+
+  .method h3 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .method p { font-size: 0.93rem; color: var(--ink-soft); }
+  .method strong { color: var(--ink); font-weight: 600; }
+
+  .bugs { display: flex; flex-direction: column; gap: 0.9rem; }
+
+  .bug {
+    display: flex;
+    gap: 0.9rem;
+    align-items: baseline;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .bug-tag {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.12rem 0.4rem;
+    border-radius: 2px;
+  }
+
+  code {
+    font-family: var(--mono);
+    font-size: 0.87em;
+    background: var(--bar-track);
+    padding: 0.08em 0.3em;
+    border-radius: 2px;
+    color: var(--ink);
+  }
+
+  pre {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    background: var(--bar-track);
+    color: var(--ink);
+    padding: 0.9rem 1.1rem;
+    border-radius: 3px;
+    overflow-x: auto;
+    line-height: 1.55;
+  }
+  pre code { background: none; padding: 0; font-size: 1em; }
+
+  /* ---------- footer ---------- */
+
+  footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.86rem;
+    color: var(--ink-faint);
+  }
+
+  footer .status { color: var(--ink-soft); }
+  footer a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 2px; }
+  footer a:hover, footer a:focus-visible { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  @media (max-width: 34rem) {
+    .board-row {
+      grid-template-columns: 1.4rem 1fr 3.2rem;
+      row-gap: 0.5rem;
+    }
+    .board-row .track { grid-column: 2 / -1; }
+    .board-head .track-head { display: none; }
+  }
+</style>
+
+</head>
+<body>

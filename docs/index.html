@@ -483,49 +483,42 @@
         <span class="track-head">Ukupno</span>
         <span class="score">%</span>
       </div>
-
       <div class="board-row">
         <span class="rank">1</span>
         <span class="model-name">mistral <span class="model-size">7B</span></span>
         <div class="track"><div class="fill" style="width: 71.5%"></div><div class="chance"></div></div>
         <span class="score">71.5</span>
       </div>
-
       <div class="board-row">
         <span class="rank">2</span>
         <span class="model-name">gemma2 <span class="model-size">2B</span></span>
         <div class="track"><div class="fill" style="width: 60.9%"></div><div class="chance"></div></div>
         <span class="score">60.9</span>
       </div>
-
       <div class="board-row">
         <span class="rank">3</span>
         <span class="model-name">qwen2.5 <span class="model-size">3B</span></span>
         <div class="track"><div class="fill" style="width: 56.6%"></div><div class="chance"></div></div>
         <span class="score">56.6</span>
       </div>
-
       <div class="board-row">
         <span class="rank">4</span>
         <span class="model-name">llama3.2 <span class="model-size">3B</span></span>
         <div class="track"><div class="fill" style="width: 54.6%"></div><div class="chance"></div></div>
         <span class="score">54.6</span>
       </div>
-
       <div class="board-row">
         <span class="rank">5</span>
         <span class="model-name">qwen2.5 <span class="model-size">1.5B</span></span>
         <div class="track"><div class="fill" style="width: 47.9%"></div><div class="chance"></div></div>
         <span class="score">47.9</span>
       </div>
-
       <div class="board-row">
         <span class="rank">6</span>
         <span class="model-name">phi3 mini <span class="model-size">3.8B</span></span>
         <div class="track"><div class="fill" style="width: 45.9%"></div><div class="chance"></div></div>
         <span class="score">45.9</span>
       </div>
-
       <div class="board-row">
         <span class="rank">7</span>
         <span class="model-name">llama3.2 <span class="model-size">1B</span></span>
@@ -574,7 +567,7 @@
         <span class="diff-score">83.2</span>
       </div>
     </div>
-    <p class="section-note">Prosek svih sedam modela po kategoriji.</p>
+    <p class="section-note">Prosek svih 7 modela po kategoriji.</p>
   </section>
 
   <section>
@@ -583,22 +576,20 @@
 
       <div class="finding">
         <div class="figure">37.1%</div>
-        <h3>Padeži su zid</h3>
+        <h3>Padeži — najteža kategorija</h3>
         <p>
-          Nijedan model ne prelazi 50%. <code>llama3.2</code> (25%) i
-          <code>qwen2.5:3b</code> (30%) su ispod nasumičnog pogađanja — bolje bi
-          prošli da su bacali novčić. Sedmopadežni sistem sa rekcijom predloga je
-          ono što ovi modeli nisu naučili.
+          Nijedan model ne prelazi 50.0%. <code>qwen2.5</code> (30.0%), <code>llama3.2</code> (25.0%), <code>llama3.2</code> (30.0%) su ispod nasumičnog pogađanja — bolje bi prošli da su bacali novčić.
+          Sedmopadežni sistem sa rekcijom predloga je ono što ovi modeli nisu naučili.
         </p>
       </div>
 
       <div class="finding">
         <div class="figure">83.2%</div>
-        <h3>NER je najlakši</h3>
+        <h3>NER — najlakša kategorija</h3>
         <p>
           Izdvajanje imena, gradova i iznosa je uglavnom prepisivanje iz teksta.
-          Morfologija se ne dira, pa i najslabiji modeli prolaze — što pokazuje da
-          visok skor na NER-u ne znači znanje jezika.
+          Morfologija se ne dira, pa i najslabiji modeli prolaze — visok skor ovde
+          ne znači znanje jezika.
         </p>
       </div>
 
@@ -606,17 +597,18 @@
         <div class="figure">2B</div>
         <h3>Veličina nije presudna</h3>
         <p>
-          <code>gemma2:2b</code> tuče i <code>qwen2.5:3b</code> i
-          <code>phi3:mini</code>, oba veća od njega. Zastupljenost srpskog u
-          podacima za treniranje znači više od broja parametara.
+          <code>gemma2:2b</code> je drugi uprkos tome što je manji od
+          više modela ispod sebe. Zastupljenost srpskog u podacima za treniranje
+          znači više od broja parametara.
         </p>
       </div>
 
       <div class="finding">
-        <div class="figure">20%</div>
+        <div class="figure">20.0%</div>
         <h3>Ispod ~2B se gubi zadatak</h3>
         <p>
-          <code>llama3.2:1b</code> na razumevanju često uopšte ne odgovori slovom
+          <code>llama3.2:1b</code> na kategoriji
+          „razumevanje" često uopšte ne odgovori slovom
           nego napiše nepovezan tekst. <code>phi3:mini</code> sklizne u ćirilicu i
           piše rečenice koje nisu srpski: „Визимото је пропуштано".
         </p>
@@ -647,38 +639,31 @@
         <tbody>
           <tr>
             <th scope="row">mistral 7B</th>
-            <td class="lead">71.5</td><td>65.0</td><td>50.0</td><td>66.7</td>
-            <td>73.3</td><td class="strong">95.3</td><td class="strong">96.7</td>
+            <td class="lead">71.5</td><td>65.0</td><td>50.0</td><td>66.7</td><td>73.3</td><td class="strong">95.3</td><td class="strong">96.7</td>
           </tr>
           <tr>
-            <th scope="row">gemma2:2b</th>
-            <td class="lead">60.9</td><td>50.0</td><td>45.0</td><td>53.3</td>
-            <td>60.0</td><td class="strong">96.7</td><td>73.3</td>
+            <th scope="row">gemma2 2B</th>
+            <td class="lead">60.9</td><td>50.0</td><td>45.0</td><td>53.3</td><td>60.0</td><td class="strong">96.7</td><td>73.3</td>
           </tr>
           <tr>
-            <th scope="row">qwen2.5:3b</th>
-            <td class="lead">56.6</td><td>65.0</td><td class="below">30.0</td><td>53.3</td>
-            <td>46.7</td><td class="strong">96.4</td><td>53.3</td>
+            <th scope="row">qwen2.5 3B</th>
+            <td class="lead">56.6</td><td>65.0</td><td class="below">30.0</td><td>53.3</td><td>46.7</td><td class="strong">96.4</td><td>53.3</td>
           </tr>
           <tr>
             <th scope="row">llama3.2 3B</th>
-            <td class="lead">54.6</td><td>55.0</td><td class="below">25.0</td><td>53.3</td>
-            <td>53.3</td><td>77.3</td><td>82.5</td>
+            <td class="lead">54.6</td><td>55.0</td><td class="below">25.0</td><td>53.3</td><td>53.3</td><td>77.3</td><td>82.5</td>
           </tr>
           <tr>
-            <th scope="row">qwen2.5:1.5b</th>
-            <td class="lead">47.9</td><td>50.0</td><td>40.0</td><td class="below">26.7</td>
-            <td>40.0</td><td>76.9</td><td>60.0</td>
+            <th scope="row">qwen2.5 1.5B</th>
+            <td class="lead">47.9</td><td>50.0</td><td>40.0</td><td class="below">26.7</td><td>40.0</td><td>76.9</td><td>60.0</td>
           </tr>
           <tr>
-            <th scope="row">phi3:mini</th>
-            <td class="lead">45.9</td><td>35.0</td><td>40.0</td><td>46.7</td>
-            <td>53.3</td><td>61.5</td><td>44.2</td>
+            <th scope="row">phi3 mini 3.8B</th>
+            <td class="lead">45.9</td><td>35.0</td><td>40.0</td><td>46.7</td><td>53.3</td><td>61.5</td><td>44.2</td>
           </tr>
           <tr>
-            <th scope="row">llama3.2:1b</th>
-            <td class="lead">38.3</td><td>35.0</td><td class="below">30.0</td><td>33.3</td>
-            <td class="below">20.0</td><td>78.4</td><td class="below">35.8</td>
+            <th scope="row">llama3.2 1B</th>
+            <td class="lead">38.3</td><td>35.0</td><td class="below">30.0</td><td>33.3</td><td class="below">20.0</td><td>78.4</td><td>35.8</td>
           </tr>
         </tbody>
       </table>
@@ -734,11 +719,17 @@
       <h3>Pokretanje</h3>
       <pre><code>ollama serve
 python bench/run.py --model ollama:mistral:latest
-python bench/test_scoring.py</code></pre>
+python bench/test_scoring.py
+./update.sh                     # izmeri sve, regeneriši stranicu, objavi</code></pre>
       <p>
         Modeli se pokreću lokalno preko ollame, bez API troška. Rezultati se upisuju
         u <code>results/&lt;model&gt;.json</code> sa odgovorom i ocenom za svaki
         zadatak, pa se svaka greška može pregledati pojedinačno.
+      </p>
+      <p>
+        <strong>Ova stranica je generisana</strong> iz tih JSON fajlova
+        (<code>bench/build_page.py</code>) — brojevi se ne kucaju ručno, pa ne mogu
+        da se raziđu sa merenjima.
       </p>
     </div>
 
@@ -746,9 +737,10 @@ python bench/test_scoring.py</code></pre>
       <h3>Ograničenja</h3>
       <p>
         Zadatke je pisao jedan izvorni govornik; standardni srpski, ekavica.
-        Skup je mali (95 zadataka), pa razlike ispod nekoliko procentnih poena nisu
-        značajne. Testirani su samo modeli koji staju na laptop (1B–7B) — veliki
-        komercijalni modeli bi verovatno probili plafon svuda osim na padežima.
+        Skup je mali (95 zadataka), pa razlike ispod nekoliko procentnih
+        poena nisu značajne. Testirani su samo modeli koji staju na laptop — veliki
+        komercijalni modeli bi verovatno probili plafon svuda osim na kategoriji
+        „padeži".
       </p>
     </div>
   </section>
@@ -762,6 +754,5 @@ python bench/test_scoring.py</code></pre>
   </footer>
 
 </div>
-
 </body>
 </html>
